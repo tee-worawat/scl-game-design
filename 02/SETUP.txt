@@ -1,0 +1,49 @@
+LESSON 02 — no studio.py
+Extract the whole kit. Keep images/ beside main.py; modular/ remains inside this folder.
+Install once in your Python environment: python -m pip install -r requirements.txt
+Use the same python command/environment to run the files. Tested dependency: pygame-ce 2.5.8.
+Do not name any file pygame.py. Run from a terminal, not a browser.
+
+STUDENT ROUTE (main.py begins as a working static scene):
+1. python main.py — add movement and a background route at the TODOs.
+2. Save your work as my_loop.py. Read 02_functions.py, then copy your own code into the helpers. Save as main.py when ready.
+3. Save my_functions.py. Use 03_player.py as the next main.py; adapt YOUR movement into Player.move. The supplied constructor and draw method are scaffolds.
+4. Save my_player.py. Copy your completed methods into modular/main.py. Move your two scene helper definitions into modular/scene.py, replacing the TODO stubs. Run python modular/main.py. This stage intentionally raises NotImplementedError until you move the helpers.
+
+TEACHER ROUTE:
+python 01_loop.py -> python 02_functions.py -> python main.py -> python modular/main.py
+Each checkpoint is complete and separately runnable. main.py is the one-file Player reference. reference.py and starter.py are launch aliases. teacher_example.py changes speed to 240.
+python object_probe.py prints independent object positions without opening a game window.
+
+Arrows move; Escape or close quits. Close/re-run to restart. No H or R shortcuts in this lesson. The landing pad is a visual target, not a collision detector.
+Position is the 64px sprite centre in an 800x600 window; clamp x to 32..768, y to 32..568. speed is pixels/second, dt is seconds capped at 0.05 in the loop. Opposite keys: Right/Down win in this simple example; diagonals are faster.
+load_sprite runs once after the window is created. draw_scene runs each frame, clearing first, then ground/route/pad. Player.draw runs last.
+No inheritance, pygame.sprite.Sprite, Vector2 or separate engine is required.
+
+5. SPRITE BRIDGE (separate 45-minute session before lesson 03): python 04_sprites.py. Student: movement/setup are supplied prior learning; complete facing if/elif and dictionary lookup TODOs. Teacher: complete reference. Start facing down; arrows move/turn; release remembers direction. Vertical wins diagonals; right/down win opposite keys. At a wall, facing follows input even if position is clamped. Escape/close quits; re-run resets. All four images load once and draw centred at 64px. Dictionary: direction key -> image value. No inheritance or walk-cycle animation yet.
+
+
+บท 02 — ไม่ใช้ studio.py
+แตกชุดทั้งหมด เก็บ images/ ข้าง main.py และ modular/ อยู่ในโฟลเดอร์เดียวกัน
+ติดตั้งครั้งเดียวในสภาพแวดล้อม Python: python -m pip install -r requirements.txt
+รันด้วยคำสั่ง python จากสภาพแวดล้อมเดียวกัน ทดสอบกับ pygame-ce 2.5.8
+อย่าตั้งชื่อไฟล์ pygame.py รันจากเทอร์มินัล ไม่ใช่เบราว์เซอร์
+
+เส้นทางผู้เรียน (main.py เริ่มเป็นฉากนิ่งที่รันได้):
+1. python main.py — เติมการเคลื่อนที่และเส้นทางพื้นหลังตรง TODO
+2. บันทึกเป็น my_loop.py อ่าน 02_functions.py แล้วย้ายโค้ดของตนเข้า helper เมื่อพร้อมใช้เป็น main.py
+3. บันทึก my_functions.py ใช้ 03_player.py เป็น main.py ถัดไป ปรับโค้ดเคลื่อนที่ของตนเข้า Player.move constructor และ draw เป็นโครงช่วย
+4. บันทึก my_player.py นำเมธอดที่ทำเสร็จไป modular/main.py ย้าย helper สองฟังก์ชันไป modular/scene.py แทน TODO แล้วรัน python modular/main.py ขั้นนี้จงใจแจ้ง NotImplementedError จนกว่าจะย้าย helper
+
+เส้นทางครู:
+python 01_loop.py -> python 02_functions.py -> python main.py -> python modular/main.py
+ทุกจุดตรวจของครูรันได้แยก main.py คือ Player แบบไฟล์เดียว reference.py และ starter.py ใช้เปิด main.py ส่วน teacher_example.py เปลี่ยนความเร็วเป็น 240
+python object_probe.py แสดงตำแหน่งออบเจ็กต์แยกโดยไม่เปิดหน้าต่างเกม
+
+ลูกศรเคลื่อนที่ Escape หรือปิดหน้าต่างเพื่อออก ปิดแล้วรันใหม่เพื่อเริ่มใหม่ บทนี้ไม่มี H/R แท่นเป็นเป้าหมายภาพ ยังไม่ตรวจชน
+ตำแหน่งคือศูนย์กลางภาพ 64px ในหน้าต่าง 800x600 จำกัด x ที่ 32..768 และ y ที่ 32..568 speed เป็นพิกเซล/วินาที dt เป็นวินาทีจำกัด 0.05 ในลูป ถ้ากดปุ่มตรงข้าม ขวา/ลงมีลำดับท้ายจึงชนะ แนวทแยงเร็วกว่า
+load_sprite ทำครั้งเดียวหลังสร้างหน้าต่าง draw_scene ทำทุกเฟรม ล้างจอแล้ววาดพื้น/เส้นทาง/แท่น Player.draw วาดท้ายสุด
+ไม่ต้องใช้ inheritance, pygame.sprite.Sprite, Vector2 หรือเอนจินแยก
+
+5. คาบเชื่อม SPRITE (แยก 45 นาทีก่อนบท 03): python 04_sprites.py ผู้เรียนได้การเคลื่อนที่/ตั้งค่าจากบทเดิม เติม TODO if/elif ทิศและการเลือกค่าจาก dictionary ครูมีเฉลยครบ เริ่มหันลง ลูกศรขยับ/หัน ปล่อยจำทิศ แนวตั้งชนะเดินเฉียง ขวา/ลงชนะปุ่มตรงข้าม เมื่อชนขอบยังหันตามอินพุตแม้ตำแหน่งถูกจำกัด Escape/ปิดเพื่อออก รันใหม่รีเซ็ต โหลดภาพสี่รูปครั้งเดียว วาดตรงกลางกรอบ 64px dictionary จับคู่ชื่อทิศกับภาพ ยังไม่ใช้ inheritance หรือแอนิเมชันเดิน
+

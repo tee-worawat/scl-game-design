@@ -1,0 +1,6 @@
+The portal advances only when targets is empty. The next level loads new lists and resets position; score persists. Completing the second sets win. Patrols are omitted to focus on data.
+
+targets = levels[level]['targets'][:] creates a separate list; reset returns level to 0 and load_level copies it again.
+
+Assign the template list directly, then remove items and permanently change the template.
+Use two paper sheets: template and live state; cross out only live items.

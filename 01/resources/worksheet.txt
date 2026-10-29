@@ -1,0 +1,11 @@
+1. Without running, point to where the robot center will appear at x=160, y=300 in an 800×600 window. What changes if x becomes 600?
+
+My prediction / line evidence:
+
+Actual result:
+
+One rule I changed:
+
+Tester tried / observed difficulty / my revision:
+
+New exit task: For a new position (240,120), predict where the sprite appears. Which single value moves it down 80 pixels?

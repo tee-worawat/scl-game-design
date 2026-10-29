@@ -1,0 +1,104 @@
+10 · Ship a small original game
+
+Extract the full student package and follow the setup file on a classroom machine.
+
+Run the teacher reference.py, verify the predicted result and test teacher_example.py separately. Student starter.py intentionally contains TODOs.
+
+Keep teacher notes and answer keys out of projection. Display the actual Python window during Run.
+
+Print the trace/playtest worksheet. Prepare an offline paper fallback and assign rotating pair roles.
+
+
+Play · reconnect & prepare (8 min)
+
+Retrieve state, functions, lists, data and feedback. Choose a stable earlier starter if level dictionaries are not yet secure.
+
+PROMPT: Which part can you explain already?
+
+ANSWER: Retrieve state, functions, lists, data and feedback. Choose a stable earlier starter if level dictionaries are not yet secure.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Predict · read before running (8 min)
+
+Keep outcomes hidden. Give 2 minutes of quiet thinking, then 3 minutes of pair explanation and 3 minutes to sample individual predictions.
+
+PROMPT: In this reference game, when does the trophy appear? What should R restore after victory?
+
+ANSWER: Only after both levels and the final portal; R restores level 0, score 0, all targets, start position and no burst. This reference is not the student final product.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Run · compare with the prediction (8 min)
+
+Teacher opens the unedited reference.py from the teacher resources. Students observe this working reference, then implement the separate TODO skeleton. Follow SETUP.txt. Spend 3 minutes testing, 3 comparing and 2 resetting. Keep teacher_example.py hidden.
+
+PROMPT: In this reference game, when does the trophy appear? What should R restore after victory?
+
+ANSWER: Only after both levels and the final portal; R restores level 0, score 0, all targets, start position and no burst. This reference is not the student final product.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Investigate · explain the rule (16 min)
+
+Show the exact starter before running. Ask each learner to explain, not just read code. Rotate driver/navigator at the halfway point. Audit goal, controls, failure, restart, reachability and a non-colour feedback cue. Ask the student to explain one rule without reading the code aloud.
+
+PROMPT: Individually, explain your rule, predict an unfamiliar state supplied by the teacher, repair one seeded bug, and transfer one mechanic to a new theme.
+
+ANSWER: A defensible explanation, correct trace, tested repair, and transfer plan count; visual polish or copied working code alone does not.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Modify · change one behaviour (15 min)
+
+Show the exact starter before running. Ask each learner to explain, not just read code. Rotate driver/navigator at the halfway point. Demonstrate one controlled rule change, such as 20 points per item, then identify why points alone do not make a new design.
+
+PROMPT: Demonstrate one controlled rule change, such as 20 points per item, then identify why points alone do not make a new design.
+
+ANSWER: Use the teacher modification example after learners attempt it. Verify the exact requested rule changed and restart still works.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Make · own a design decision (25 min)
+
+Plan for 5 minutes, build for 12, swap and playtest for 5, then save for 3. Scope down before adding another mechanic. Create a rescue, courier or exploration variant: change the player goal AND one interaction rule or route decision. Keep scope to one or two levels, a restart and one observed playtest revision.
+
+PROMPT: Create a rescue, courier or exploration variant: change the player goal AND one interaction rule or route decision. Keep scope to one or two levels, a restart and one observed playtest revision.
+
+ANSWER: Several designs are valid. Require a stated goal, a rule change, and evidence from a test; a reskin alone is insufficient.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Grow · explain, save & reset (10 min)
+
+Use 6 minutes for individual checks, 2 for reflection and 2 for save/cleanup. Log actual evidence later in the school system.
+
+PROMPT: Individually, explain your rule, predict an unfamiliar state supplied by the teacher, repair one seeded bug, and transfer one mechanic to a new theme.
+
+ANSWER: A defensible explanation, correct trace, tested repair, and transfer plan count; visual polish or copied working code alone does not.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+ASSESSMENT
+
+[
+  {
+    "objective_id": "O1",
+    "task": "Individually, explain your rule, predict an unfamiliar state supplied by the teacher, repair one seeded bug, and transfer one mechanic to a new theme.",
+    "expected": "A defensible explanation, correct trace, tested repair, and transfer plan count; visual polish or copied working code alone does not.",
+    "next_step": "Ask which player decision and which rule changed, then compare the two test cases."
+  },
+  {
+    "objective_id": "O2",
+    "task": "Create a rescue, courier or exploration variant: change the player goal AND one interaction rule or route decision. Keep scope to one or two levels, a restart and one observed playtest revision.",
+    "expected": "A stated decision, prediction, observed result and explained revision; ask both partners independently.",
+    "next_step": "If copied, give a new start value or goal to transfer the rule. If explained independently, use the stretch."
+  }
+]

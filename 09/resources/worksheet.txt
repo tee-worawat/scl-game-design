@@ -1,0 +1,11 @@
+1. When a crystal disappears, where does the burst appear, how long does it last, and can the player still move?
+
+My prediction / line evidence:
+
+Actual result:
+
+One rule I changed:
+
+Tester tried / observed difficulty / my revision:
+
+New exit task: flash=0.1 and dt=0.2: what is drawn next? Does a vanished burst remove the score?

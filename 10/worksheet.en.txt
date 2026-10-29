@@ -1,0 +1,11 @@
+1. In this reference game, when does the trophy appear? What should R restore after victory?
+
+My prediction / line evidence:
+
+Actual result:
+
+One rule I changed:
+
+Tester tried / observed difficulty / my revision:
+
+New exit task: Individually, explain your rule, predict an unfamiliar state supplied by the teacher, repair one seeded bug, and transfer one mechanic to a new theme.

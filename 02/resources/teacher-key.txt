@@ -1,0 +1,3 @@
+169 then 178. dx=1, so each update adds 9. When released dx=0, so x stays put. tick returns milliseconds; dividing by 1000 gives seconds. The 0.05 cap avoids a huge jump after a pause.
+
+a.x=140; b.x stays 500 because self is a for this call. Use from scene import draw_scene and then draw_scene(screen,pad,pad_position) inside the loop. Import makes the helper available; the call draws this frame. The direct method trace uses dt=0.5; the running loop caps dt at 0.05.

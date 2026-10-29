@@ -1,0 +1,9 @@
+SPRITE TRACE
+What is a sprite? ___
+Label the four atlas pictures: up / right / down / left.
+a and b start down. Only a receives Left, release, Up+Left (vertical first).
+a facing after each step: ___ / ___ / ___
+b facing: ___
+Point to a key, image value, self.facing and image lookup.
+My docking route and required facing at two stops: ___
+Prediction ___ Observation ___ Revision ___

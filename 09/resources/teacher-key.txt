@@ -1,0 +1,6 @@
+At the collected target position for 0.3 seconds. Movement continues because no sleep is used. Score text remains as a non-flashing cue.
+
+flash clamps to 0, so no burst; score persists independently.
+
+Use a blocking delay to show an effect; all controls stop responding.
+Keep a countdown variable and draw condition; never pause the whole loop for feedback.

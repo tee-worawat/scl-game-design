@@ -1,0 +1,206 @@
+02 · Move a player: one file to reusable helpers
+
+Install requirements before class. Run teacher 01_loop.py, 02_functions.py, main.py and modular/main.py. Confirm the same route, assets and 180 speed.
+
+Distribute only student-project.zip. main.py must open a static scene. Modular stubs intentionally need learners to move their helpers before running.
+
+Print worksheet and checkpoint map. Keep complete references and teacher answers hidden during prediction. Use the actual Python window for Run.
+
+Prepare x/y cards for two players; rotate driver/navigator; save each working checkpoint before refactoring.
+
+Before the bridge run teacher 04_sprites.py. Supply student 04_sprites.py, which already moves but has two sprite TODOs. View images/robot-directions.png as an atlas; code loads the four individual PNGs.
+
+
+Play · open one file (8 min)
+
+Assume only basic variables, if, and a little exposure to import/def. Show import pygame versus calling a function; trace x=160 then x+=18. Do not assume recall of classes from lesson 00.
+
+PROMPT: Which line gets pygame ready to use? Does writing def call a function?
+
+ANSWER: import makes a module available. def stores a function definition; main() calls it. The launch guard is supplied setup, not an assessment target.
+
+EVIDENCE: Each learner distinguishes import, definition and call with pointing or Thai speech.
+
+
+Predict · two tiny moves (7 min)
+
+Display only the movement excerpt from teacher 01_loop.py, not its running result. Use dt=0.05 cards. Ask both partners before revealing.
+
+PROMPT: In 01_loop.py, x=160, speed=180 and Right is held. With dt=0.05, what is x after one update and two? What happens when the key is released?
+
+ANSWER: 169 then 178. dx=1, so each update adds 9. When released dx=0, so x stays put. tick returns milliseconds; dividing by 1000 gives seconds. The 0.05 cap avoids a huge jump after a pause.
+
+EVIDENCE: Predicts 169,178 and explains why release gives dx=0.
+
+
+Run · watch the loop (5 min)
+
+Run the unchanged teacher 01_loop.py. Hold/release arrows; close and restart. Compare direction and stop behaviour with the exact paper trace; live elapsed time will vary.
+
+PROMPT: What keeps drawing when you release the key?
+
+ANSWER: The loop continues. dx/dy become zero; the position stays fixed while frames redraw.
+
+EVIDENCE: Separates a stopped player from a stopped game loop.
+
+
+Investigate · name the drawing jobs (12 min)
+
+Learners fill two movement TODO lines in main.py; begin horizontally. Save my_loop.py. Compare 02_functions.py: move background lines into draw_scene and repeated image loading into load_sprite. Explain parameters and return with one image path. Do not introduce Player yet.
+
+PROMPT: Which helper runs once, and which runs every frame? Why clear the screen first?
+
+ANSWER: Load each asset once after set_mode; draw_scene clears and draws every frame. return gives the resized image to the caller. Draw the player afterwards so it is not erased.
+
+EVIDENCE: Identifies load_sprite before the loop and draw_scene inside it; a complete scene still renders.
+
+
+Investigate · give the player its own state (18 min)
+
+Save my_functions.py. Reveal one part of 03_player.py at a time: class as description, Player(...) as construction, __init__ stores state, self names the receiving object, move/draw are methods. Supply constructor/draw; students adapt their movement using self. Swap pair roles after 9 minutes. Demonstrate object_probe.py only after predictions.
+
+PROMPT: nova.move(1,0,0.05) changes whose x? If pip starts at 500, what happens to pip?
+
+ANSWER: nova.x becomes 169; pip.x stays 500. Both share the class definition, but each owns x/y/speed. A method is a function belonging to an object.
+
+EVIDENCE: Movement works and each learner explains self and unchanged pip.x.
+
+
+Modify · tune the movement (10 min)
+
+Use the completed one-file Player version. Keep the target and start fixed while testing speed. Show teacher_example.py only after the learner attempts a change.
+
+PROMPT: In your Player version, change self.speed from 180 to 240. Predict 12 pixels per dt=0.05. Test the same route to the landing pad and explain the precision trade-off.
+
+ANSWER: 240*0.05=12. Faster travel may make stopping accurately harder; accept different preferences supported by observation.
+
+EVIDENCE: Explains a precision/speed trade-off using a test, not just colour changes.
+
+
+Investigate · reuse your helper with import (10 min)
+
+Guided refactor: save my_player.py, transfer completed code into modular/main.py, MOVE load_sprite/draw_scene into modular/scene.py (with import pygame). Remove the local definitions and use from scene import load_sprite, draw_scene. Keep window creation and loop in main.py. The asset path goes up one folder because this checkpoint is in modular/. Test the same start/speed/target.
+
+PROMPT: Does importing draw_scene draw anything? Which call still needs to stay in the loop?
+
+ANSWER: Import makes definitions available; draw_scene(screen,pad,pad_position) still runs in the loop. scene.py defines helpers without opening a window. No circular import is needed.
+
+EVIDENCE: Can identify the definition file, import line and call; extraction leaves movement unchanged.
+
+
+Make · design a docking scene (13 min)
+
+Allow either working one-file or modular version. Plan 3 minutes, build 6, swap/playtest 3, save 1. Require one movement decision and one background route cue; visual decoration alone is not the goal.
+
+PROMPT: Choose a starting position, landing-pad position and speed to design a precision docking challenge. Draw a background route using your scene helper. Ask a partner to stop on the pad; use their observation to revise one movement choice. No collision or win detection is supplied.
+
+ANSWER: Valid outcomes vary. Use visual docking by stopping on the pad. Do not claim automatic scoring or collision.
+
+EVIDENCE: A partner can try the route and the author explains a behaviour change.
+
+
+Grow · explain independently (7 min)
+
+Use 4 minutes for individual checks, 2 to save the whole folder and 1 for a next step. Check each partner. Mark prompted versus independent; do not infer mastery from a runnable file.
+
+PROMPT: New case: a.x=200, a.speed=120; a.move(-1,0,0.5). What is a.x? If b.x=500, does it change? Name the two lines needed to use draw_scene from scene.py.
+
+ANSWER: a.x=140; b.x stays 500 because self is a for this call. Use from scene import draw_scene and then draw_scene(screen,pad,pad_position) inside the loop. Import makes the helper available; the call draws this frame. The direct method trace uses dt=0.5; the running loop caps dt at 0.05.
+
+EVIDENCE: Three separately recorded checks: movement, object ownership, helper reuse.
+
+
+Bridge · what is a sprite? (5 min)
+
+Start a separate 45-minute session after the movement exit check. Keep the saved Player project. Show four directional PNGs and the teacher 04_sprites.py excerpt without running. A sprite is an image representing a game object; our Player owns position and chooses its image. These are direction frames, not a walking animation.
+
+PROMPT: Start facing down. Predict the picture after Right, release, Up. Does choosing a picture move x or y?
+
+ANSWER: right, right, up. Selecting an image does not move position; move changes x/y separately.
+
+EVIDENCE: Separates position, direction and picture before seeing the game.
+
+
+Run · look from above (5 min)
+
+Run the complete teacher 04_sprites.py unchanged. Compare the prediction. Show up/down/left/right, release and Up+Right. Explain that student 04_sprites.py moves but deliberately keeps the down picture until its TODOs are completed.
+
+PROMPT: Which part of the robot do you see when it travels up? What happens after release?
+
+ANSWER: Up shows the back/top of the robot. Release stops movement but preserves the last facing. Up+Right moves diagonally and shows up.
+
+EVIDENCE: Recognises the back view and persistent facing at rest.
+
+
+Investigate · a picture wardrobe (12 min)
+
+Introduce one dictionary lookup: sprites["up"] selects the image stored under the key up. Read the four explicit entries before introducing self.sprites[self.facing]. Trace __init__, the if/elif chain in move, then draw. Load images once outside the loop. All frames share a 64px canvas and centre; draw chooses the image every frame. Do not introduce inheritance or pygame.sprite.Sprite.
+
+PROMPT: Which attribute remembers direction? Why is there no final else setting down?
+
+ANSWER: self.facing stores a string such as "up". self.sprites maps that key to an image. No matching branch leaves the previous value; a final else would reset it on release.
+
+EVIDENCE: Explains that self.facing belongs to this Player and remains unchanged without direction input.
+
+
+Modify · who wins on a diagonal? (8 min)
+
+After the core TODOs work, ask pairs to change branch order so horizontal direction wins diagonals. Predict first, then test Up+Right. Keep x/y movement unchanged. Swap roles halfway.
+
+PROMPT: What should change, and what should stay the same?
+
+ANSWER: if/elif takes the first matching branch. Horizontal-first shows right for dx=1,dy=-1. Movement still updates both axes.
+
+EVIDENCE: Same diagonal travel; right picture instead of up.
+
+
+Make · face the docking station (10 min)
+
+Learners choose two stop locations and a required facing at each. Plan 2 minutes, code/test 5, partner feedback 2, save 1. Use visual checking only; collision and scoring come later.
+
+PROMPT: Design a route where stopping in the right place is not enough: the robot must face the station too.
+
+ANSWER: Accept different routes. Require correct image selection, no snap to down on release, and an explanation of the chosen diagonal rule.
+
+EVIDENCE: A route with two deliberate facing choices and one revision after feedback.
+
+
+Grow · whose direction changed? (5 min)
+
+Assess each learner independently, then save the whole folder. Use the original vertical-first reference for this exit. Gate lesson 03 on movement and facing explanations; provide another trace if prompted.
+
+PROMPT: a and b start facing down. Only a.move(-1,0,0.05), then a.move(0,0,0.05). Which image does each draw? If a next moves Up+Left, which image wins?
+
+ANSWER: a shows left at rest; b still down. Up+Left shows up in the original vertical-first chain. Shared images do not share self.facing.
+
+EVIDENCE: a left, b down; then a up. Explains instance ownership and idle memory.
+
+
+ASSESSMENT
+
+[
+  {
+    "objective_id": "O1",
+    "task": "x=200, speed=120, dx=-1, dt=0.5 in a direct move call. Predict x. Explain why scene clear must precede the player draw.",
+    "expected": "140. Clear after the player would erase it; dt here is a direct trace value, not the loop-capped dt.",
+    "next_step": "Complete horizontal movement in the visible single-file loop first. Provide dt=0.05 counters. Use the supplied constructor and draw method; learners implement move. If not ready, keep helpers local and revisit extraction next session."
+  },
+  {
+    "objective_id": "O2",
+    "task": "a starts at 200 and b at 500. Only a.move(-1,0,0.5) is called at speed 120. Explain both positions and self.",
+    "expected": "a=140, b=500; self is a in this call. The class describes both but does not share their x.",
+    "next_step": "Point to the data and method separately. Trace a.move with cards labelled a and b. Import scene without calling anything; then call draw_scene once. The picture is only one attribute."
+  },
+  {
+    "objective_id": "O3",
+    "task": "Identify where draw_scene is defined, imported and called. Predict what happens if its call is removed.",
+    "expected": "Definition in scene.py; from scene import draw_scene in main.py; call inside the loop. Import alone does not draw. Without the call the scene is not cleared/redrawn.",
+    "next_step": "If prompted, repeat moving one helper next session before adding modules."
+  },
+  {
+    "objective_id": "O4",
+    "task": "a and b start facing down. Only a.move(-1,0,0.05), then a.move(0,0,0.05). Which image does each draw? If a next moves Up+Left, which image wins?",
+    "expected": "a shows left at rest; b still down. Up+Left shows up in the original vertical-first chain. Shared images do not share self.facing.",
+    "next_step": "Return to two separate facing cards; trace only the object named before .move."
+  }
+]

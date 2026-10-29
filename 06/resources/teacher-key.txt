@@ -1,0 +1,6 @@
+Three crystals and two asteroids; score=30 and state=win. Touching any asteroid loses. There is no countdown in this isolated list lesson.
+
+20; iterating a copy avoids skipping an item when the original list shrinks.
+
+Duplicate an if block for every target instead of changing the data.
+Cover the list and ask which rule would need changing for 100 targets.

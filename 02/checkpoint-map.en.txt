@@ -1,0 +1,7 @@
+CHECKPOINT MAP
+1. main.py: student static scene -> write movement and a background route. Teacher reference: 01_loop.py.
+2. 02_functions.py: named jobs in the SAME file. Move your own code; save my_loop.py first.
+3. 03_player.py: Player owns x/y/speed/image. Adapt move; save my_functions.py first. Teacher reference: main.py.
+4. modular/main.py + scene.py: import only your two scene helpers. Keep class and loop in main. Save my_player.py first.
+Compare behaviour after each refactor. Do not overwrite your only working copy.
+5. SPRITE BRIDGE (separate 45-minute session before lesson 03): python 04_sprites.py. Student: movement/setup are supplied prior learning; complete facing if/elif and dictionary lookup TODOs. Teacher: complete reference. Start facing down; arrows move/turn; release remembers direction. Vertical wins diagonals; right/down win opposite keys. At a wall, facing follows input even if position is clamped. Escape/close quits; re-run resets. All four images load once and draw centred at 64px. Dictionary: direction key -> image value. No inheritance or walk-cycle animation yet.

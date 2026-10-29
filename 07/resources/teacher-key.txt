@@ -1,0 +1,6 @@
+It clamps to the boundary and reverses to -100 at the right edge, then +100 at the left. Its y stays 220.
+
+x=700 and speed=-100. The computed 701 is clamped.
+
+Change position but forget to reverse speed; the enemy sticks to the edge.
+Track position and velocity in separate columns for three updates.

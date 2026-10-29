@@ -1,0 +1,17 @@
+Read predict.py without running. Predict each of its three output lines. Does defining a function call it? Which badge changes when nova.collect(2) runs?
+
+Prediction / observed output / explanation:
+
+Function input | expected return | actual return
+3,1 | ____ | ____
+0,1 | ____ | ____
+3,0 | ____ | ____
+
+Robot | name | energy | position
+A | ____ | ____ | ____
+B | ____ | ____ | ____
+
+Choose one rule; predict and test a change.
+Manual mission cases: m,m,m,r,m; six m commands; invalid command; q; fresh restart.
+
+Exit: New case: a=Robot("A",1); b=Robot("B",3); a.move(); a.move(); b.recharge(). Predict both objects’ energy and position. Explain why return False does not itself change a.position. Write a new function can_rescue(position, goal) returning a Boolean and test both outcomes.

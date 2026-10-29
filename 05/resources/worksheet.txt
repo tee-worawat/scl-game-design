@@ -1,0 +1,11 @@
+1. Do nothing for eight seconds. What changes? Can you collect a battery after time reaches zero?
+
+My prediction / line evidence:
+
+Actual result:
+
+One rule I changed:
+
+Tester tried / observed difficulty / my revision:
+
+New exit task: time_left=1.5 and dt=0.25: what is the next value? At zero, which state prevents movement?

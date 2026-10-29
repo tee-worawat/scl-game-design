@@ -1,0 +1,9 @@
+1. Trace x=160, speed=180, dx=1: dt=0.05 twice.
+Prediction: ___ / ___
+2. Label load_sprite: once or every frame? draw_scene: once or every frame?
+3. Draw two Player boxes a and b. Only a moves. Show self and the changed attribute.
+4. My docking decision: start ___ target ___ speed ___ background route ___
+Prediction ___ Observation ___ Revision ___
+5. Definition file ___ Import line ___ Call line ___
+6. Exit: a.x=200, speed=120, dx=-1, dt=0.5. Next a.x ___ b.x=500 becomes ___
+Explain clearing before drawing: ___

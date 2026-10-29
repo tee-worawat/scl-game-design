@@ -1,0 +1,1 @@
+แตก ZIP ทั้งชุด ใช้ Python 3 ไม่ต้องติดตั้งแพ็กเกจ ในโฟลเดอร์รัน python3 predict.py, python3 starter.py และ python3 check_work.py (Windows ใช้ py แทน python3) คาดก่อนรัน starter.py มี TODO โดยตั้งใจ ครูใช้ reference.py เป็นภารกิจครบ และ teacher_example.py สาธิตการแก้ป้าย รันใหม่เพื่อรีเซ็ตทุกตัว

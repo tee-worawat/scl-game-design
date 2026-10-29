@@ -1,0 +1,104 @@
+00 · Pre-lesson · Robot Rescue
+
+Extract each ZIP. Run predict.py and teacher reference.py; test m,m,m,r,m for a win.
+
+Check that student starter.py contains TODOs; check_work.py initially reports NEXT. This is expected, not a setup failure.
+
+Hide reference.py and teacher notes. Project only predict.py during Predict/Run; reveal full mission code only after an attempt.
+
+Prepare separate state cards for Nova and Pip and assign driver/navigator roles; swap after the function task.
+
+
+Play · mission briefing and entry check (8 min)
+
+In the first 8 minutes: trace energy=3; energy=energy-1; if energy>0: print("go"). Ask for output and a starting value that prevents go from printing. Then invite a function attempt without scoring speed. If assignment/if is insecure, use counters and add foundation time; do not cover the gap with copied code.
+
+PROMPT: What changes when one energy is spent?
+
+ANSWER: Energy becomes 2 and go prints. Observe reasoning separately from typing.
+
+EVIDENCE: Observe each learner’s prediction, trace or tested code, recording independent / prompted / not yet separately for functions and objects.
+
+
+Think · predict the tiny example (7 min)
+
+Show predict.py, not the full mission solution. Start with the function, then cover/uncover the two Badge objects. Accept tentative OOP predictions.
+
+PROMPT: Read predict.py without running. Predict each of its three output lines. Does defining a function call it? Which badge changes when nova.collect(2) runs?
+
+ANSWER: Output: 2 0, then 7, then 2. def only defines a function. add_points returns a value; it does not update a badge. collect assigns the result to the receiving object. nova and pip have independent points.
+
+EVIDENCE: Observe each learner’s prediction, trace or tested code, recording independent / prompted / not yet separately for functions and objects.
+
+
+Run · compare evidence (5 min)
+
+Run the unedited predict.py once. Each partner identifies one match or surprise. Rerun to reset both badges.
+
+PROMPT: Read predict.py without running. Predict each of its three output lines. Does defining a function call it? Which badge changes when nova.collect(2) runs?
+
+ANSWER: Output: 2 0, then 7, then 2. def only defines a function. add_points returns a value; it does not update a badge. collect assigns the result to the receiving object. nova and pip have independent points.
+
+EVIDENCE: Observe each learner’s prediction, trace or tested code, recording independent / prompted / not yet separately for functions and objects.
+
+
+Investigate · functions, then objects (20 min)
+
+First trace add_points(4, 3): parameters receive values and return sends 7 back. Then act out two Badge instances with separate cards. Trace __init__, self and nova.collect(2); self refers to nova in that call. A class defines a kind of object; an instance is one created object. No inheritance is needed. Spend 8 minutes on calls/return, then 12 on class, instance, attributes and methods. Hinge: if pip.collect(1) runs, does nova change?
+
+PROMPT: Where does return send the result? Who is self for each call?
+
+ANSWER: The caller receives the value. self is the receiving instance; pip changes independently.
+
+EVIDENCE: Observe each learner’s prediction, trace or tested code, recording independent / prompted / not yet separately for functions and objects.
+
+
+Code · a function you own (15 min)
+
+In predict.py add pip.collect(3) after nova.collect(2). Predict all output lines before running. Then implement energy_after_move in starter.py and run check_work.py. The object check is expected to say NEXT until the class is written. Model reading one failed check; do not fill the TODO for learners. Swap pair roles.
+
+PROMPT: In predict.py add pip.collect(3) after nova.collect(2). Predict all output lines before running. Then implement energy_after_move in starter.py and run check_work.py. The object check is expected to say NEXT until the class is written.
+
+ANSWER: Modified output is 2 3, then 7, then 2. Energy checks return 2, 0 and 3. A negative cost raises ValueError; teacher can explain this supplied error convention.
+
+EVIDENCE: Observe each learner’s prediction, trace or tested code, recording independent / prompted / not yet separately for functions and objects.
+
+
+Create · your rescue robot (25 min)
+
+Plan 4 minutes, build/test methods 12, choose and test one rule 6, save 3. Core success is independent objects plus direct calls. The full input loop is stretch if time is tight.
+
+PROMPT: Complete Robot.__init__, move and recharge. Plan a rescue route to position 4 in at most 6 turns; move costs 1 energy, recharge adds 2 capped at 5. Build play() if time permits, then choose a new goal distance or energy rule and justify one test.
+
+ANSWER: m,m,m,r,m reaches position 4 with energy 1 in 5 turns. Repeated m with no recharge fails. A new goal/rule must be tested; several designs are valid.
+
+EVIDENCE: Observe each learner’s prediction, trace or tested code, recording independent / prompted / not yet separately for functions and objects.
+
+
+Grow · individual readiness and save (10 min)
+
+Use 6 minutes for separate exit tasks, 2 to name the next step, 2 to save and close. Record observed support levels privately.
+
+PROMPT: New case: a=Robot("A",1); b=Robot("B",3); a.move(); a.move(); b.recharge(). Predict both objects’ energy and position. Explain why return False does not itself change a.position. Write a new function can_rescue(position, goal) returning a Boolean and test both outcomes.
+
+ANSWER: A: energy 0, position 1. B: energy 5, position 0. return passes a value to the caller; only executed assignments change these attributes. can_rescue returns position >= goal; test (4,4) -> True and (2,4) -> False. Record function writing and object tracing separately.
+
+EVIDENCE: Observe each learner’s prediction, trace or tested code, recording independent / prompted / not yet separately for functions and objects.
+
+
+ASSESSMENT
+
+[
+  {
+    "objective_id": "O1",
+    "task": "Write can_rescue(position, goal) and explain two tests without a partner.",
+    "expected": "Returns position >= goal, not only print; (4,4) True, (2,4) False.",
+    "next_step": "Ready for lesson 1: writes/calls a returning function and traces independent instances with at most a light prompt. Function gap: extra console practice first. Object gap only: proceed with the function-based lesson 1 and revisit two-object tracing; do not require inheritance or a complete input loop."
+  },
+  {
+    "objective_id": "O2",
+    "task": "New case: a=Robot(\"A\",1); b=Robot(\"B\",3); a.move(); a.move(); b.recharge(). Predict both objects’ energy and position. Explain why return False does not itself change a.position. Write a new function can_rescue(position, goal) returning a Boolean and test both outcomes.",
+    "expected": "A: energy 0, position 1. B: energy 5, position 0. return passes a value to the caller; only executed assignments change these attributes. can_rescue returns position >= goal; test (4,4) -> True and (2,4) -> False. Record function writing and object tracing separately.",
+    "next_step": "Ready for lesson 1: writes/calls a returning function and traces independent instances with at most a light prompt. Function gap: extra console practice first. Object gap only: proceed with the function-based lesson 1 and revisit two-object tracing; do not require inheritance or a complete input loop."
+  }
+]

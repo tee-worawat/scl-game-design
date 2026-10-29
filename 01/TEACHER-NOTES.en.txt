@@ -1,0 +1,104 @@
+01 · Place a character
+
+Extract the full student package and follow the setup file on a classroom machine.
+
+Run the teacher reference.py, verify the predicted result and test teacher_example.py separately. Student starter.py intentionally contains TODOs.
+
+Keep teacher notes and answer keys out of projection. Display the actual Python window during Run.
+
+Print the trace/playtest worksheet. Prepare an offline paper fallback and assign rotating pair roles.
+
+
+Play · reconnect & prepare (8 min)
+
+Retrieve pre-lesson functions: arguments, return and calling versus defining. Trace x = 160; x = x + 40. Connect Robot.move() to the supplied g.picture() method; graphical lessons use functions first, with class refactoring optional later.
+
+PROMPT: Which part can you explain already?
+
+ANSWER: Retrieve pre-lesson functions: arguments, return and calling versus defining. Trace x = 160; x = x + 40. Connect Robot.move() to the supplied g.picture() method; graphical lessons use functions first, with class refactoring optional later.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Predict · read before running (8 min)
+
+Keep outcomes hidden. Give 2 minutes of quiet thinking, then 3 minutes of pair explanation and 3 minutes to sample individual predictions.
+
+PROMPT: Without running, point to where the robot center will appear at x=160, y=300 in an 800×600 window. What changes if x becomes 600?
+
+ANSWER: It appears left of center, halfway down; x=600 moves it right without changing height. This is a static scene, not yet a game.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Run · compare with the prediction (8 min)
+
+Teacher opens the unedited reference.py from the teacher resources. Students observe this working reference, then implement the separate TODO skeleton. Follow SETUP.txt. Spend 3 minutes testing, 3 comparing and 2 resetting. Keep teacher_example.py hidden.
+
+PROMPT: Without running, point to where the robot center will appear at x=160, y=300 in an 800×600 window. What changes if x becomes 600?
+
+ANSWER: It appears left of center, halfway down; x=600 moves it right without changing height. This is a static scene, not yet a game.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Investigate · explain the rule (16 min)
+
+Show the exact starter before running. Ask each learner to explain, not just read code. Rotate driver/navigator at the halfway point. Trace the two arguments passed to g.picture. Identify what belongs to the teacher-provided renderer and what belongs to the student. Origin is top-left; positive y goes down.
+
+PROMPT: For a new position (240,120), predict where the sprite appears. Which single value moves it down 80 pixels?
+
+ANSWER: Change y to 200; x stays 240. The center moves down, not up.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Modify · change one behaviour (15 min)
+
+Show the exact starter before running. Ask each learner to explain, not just read code. Rotate driver/navigator at the halfway point. Move the robot to x=600 without changing y. Predict first, then restart the program.
+
+PROMPT: Move the robot to x=600 without changing y. Predict first, then restart the program.
+
+ANSWER: Use the teacher modification example after learners attempt it. Verify the exact requested rule changed and restart still works.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Make · own a design decision (25 min)
+
+Plan for 5 minutes, build for 12, swap and playtest for 5, then save for 3. Scope down before adding another mechanic. Design a starting scene for a rescue mission. Choose a meaningful start location and write a one-sentence player goal; justify the coordinates.
+
+PROMPT: Design a starting scene for a rescue mission. Choose a meaningful start location and write a one-sentence player goal; justify the coordinates.
+
+ANSWER: Several designs are valid. Require a stated goal, a rule change, and evidence from a test; a reskin alone is insufficient.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Grow · explain, save & reset (10 min)
+
+Use 6 minutes for individual checks, 2 for reflection and 2 for save/cleanup. Log actual evidence later in the school system.
+
+PROMPT: For a new position (240,120), predict where the sprite appears. Which single value moves it down 80 pixels?
+
+ANSWER: Change y to 200; x stays 240. The center moves down, not up.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+ASSESSMENT
+
+[
+  {
+    "objective_id": "O1",
+    "task": "For a new position (240,120), predict where the sprite appears. Which single value moves it down 80 pixels?",
+    "expected": "Change y to 200; x stays 240. The center moves down, not up.",
+    "next_step": "Mark the screen top-left on paper and count rows down."
+  },
+  {
+    "objective_id": "O2",
+    "task": "Design a starting scene for a rescue mission. Choose a meaningful start location and write a one-sentence player goal; justify the coordinates.",
+    "expected": "A stated decision, prediction, observed result and explained revision; ask both partners independently.",
+    "next_step": "If copied, give a new start value or goal to transfer the rule. If explained independently, use the stretch."
+  }
+]

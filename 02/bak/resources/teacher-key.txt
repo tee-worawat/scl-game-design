@@ -1,0 +1,6 @@
+Approximately x=340. Moving at 180 pixels per second uses speed×dt on every update. Releasing the key stops movement.
+
+140; subtract 60. With no key held it remains 200.
+
+Use input() or sleep() inside the game loop to wait for movement.
+Act out check keys → update → draw repeatedly; blocking stops all three.

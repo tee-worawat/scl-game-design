@@ -1,0 +1,6 @@
+Only after both levels and the final portal; R restores level 0, score 0, all targets, start position and no burst. This reference is not the student final product.
+
+A defensible explanation, correct trace, tested repair, and transfer plan count; visual polish or copied working code alone does not.
+
+A renamed or recoloured reference is treated as an original game.
+Ask which player decision and which rule changed, then compare the two test cases.

@@ -1,0 +1,5 @@
+Output: 2 0, then 7, then 2. def only defines a function. add_points returns a value; it does not update a badge. collect assigns the result to the receiving object. nova and pip have independent points.
+
+A: energy 0, position 1. B: energy 5, position 0. return passes a value to the caller; only executed assignments change these attributes. can_rescue returns position >= goal; test (4,4) -> True and (2,4) -> False. Record function writing and object tracing separately.
+
+Ready for lesson 1: writes/calls a returning function and traces independent instances with at most a light prompt. Function gap: extra console practice first. Object gap only: proceed with the function-based lesson 1 and revisit two-object tracing; do not require inheritance or a complete input loop.

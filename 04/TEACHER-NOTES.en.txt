@@ -1,0 +1,104 @@
+04 · Score, win, restart
+
+Extract the full student package and follow the setup file on a classroom machine.
+
+Run the teacher reference.py, verify the predicted result and test teacher_example.py separately. Student starter.py intentionally contains TODOs.
+
+Keep teacher notes and answer keys out of projection. Display the actual Python window during Run.
+
+Print the trace/playtest worksheet. Prepare an offline paper fallback and assign rotating pair roles.
+
+
+Play · reconnect & prepare (8 min)
+
+Retrieve Boolean guards. Bridge: call reset(), then inspect its def and global bindings; naming a function does not call it.
+
+PROMPT: Which part can you explain already?
+
+ANSWER: Retrieve Boolean guards. Bridge: call reset(), then inspect its def and global bindings; naming a function does not call it.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Predict · read before running (8 min)
+
+Keep outcomes hidden. Give 2 minutes of quiet thinking, then 3 minutes of pair explanation and 3 minutes to sample individual predictions.
+
+PROMPT: Collect the battery, wait two seconds, then press R. Predict score, state, position and collected after each step.
+
+ANSWER: Collection gives 10 once and sets win. Waiting adds nothing. R restores score=0, state=play, (160,300), and collected=False.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Run · compare with the prediction (8 min)
+
+Teacher opens the unedited reference.py from the teacher resources. Students observe this working reference, then implement the separate TODO skeleton. Follow SETUP.txt. Spend 3 minutes testing, 3 comparing and 2 resetting. Keep teacher_example.py hidden.
+
+PROMPT: Collect the battery, wait two seconds, then press R. Predict score, state, position and collected after each step.
+
+ANSWER: Collection gives 10 once and sets win. Waiting adds nothing. R restores score=0, state=play, (160,300), and collected=False.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Investigate · explain the rule (16 min)
+
+Show the exact starter before running. Ask each learner to explain, not just read code. Rotate driver/navigator at the halfway point. Trace the early return when state is not play. Map every variable assigned in reset to the behaviour it restores.
+
+PROMPT: A broken reset sets score=0 but leaves collected=True. What happens on the next attempt, and which assignment repairs it?
+
+ANSWER: The item remains hidden and cannot be collected. Add collected=False in reset, with its global binding.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Modify · change one behaviour (15 min)
+
+Show the exact starter before running. Ask each learner to explain, not just read code. Rotate driver/navigator at the halfway point. Award 25 points per battery while preserving one-time collection and a complete restart.
+
+PROMPT: Award 25 points per battery while preserving one-time collection and a complete restart.
+
+ANSWER: Use the teacher modification example after learners attempt it. Verify the exact requested rule changed and restart still works.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Make · own a design decision (25 min)
+
+Plan for 5 minutes, build for 12, swap and playtest for 5, then save for 3. Scope down before adding another mechanic. Design a win condition with a clear goal message and restart instruction. Change a rule or target, not only the colours.
+
+PROMPT: Design a win condition with a clear goal message and restart instruction. Change a rule or target, not only the colours.
+
+ANSWER: Several designs are valid. Require a stated goal, a rule change, and evidence from a test; a reskin alone is insufficient.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Grow · explain, save & reset (10 min)
+
+Use 6 minutes for individual checks, 2 for reflection and 2 for save/cleanup. Log actual evidence later in the school system.
+
+PROMPT: A broken reset sets score=0 but leaves collected=True. What happens on the next attempt, and which assignment repairs it?
+
+ANSWER: The item remains hidden and cannot be collected. Add collected=False in reset, with its global binding.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+ASSESSMENT
+
+[
+  {
+    "objective_id": "O1",
+    "task": "A broken reset sets score=0 but leaves collected=True. What happens on the next attempt, and which assignment repairs it?",
+    "expected": "The item remains hidden and cannot be collected. Add collected=False in reset, with its global binding.",
+    "next_step": "Use a before/after checklist for x, y, score, collected and state."
+  },
+  {
+    "objective_id": "O2",
+    "task": "Design a win condition with a clear goal message and restart instruction. Change a rule or target, not only the colours.",
+    "expected": "A stated decision, prediction, observed result and explained revision; ask both partners independently.",
+    "next_step": "If copied, give a new start value or goal to transfer the rule. If explained independently, use the stretch."
+  }
+]

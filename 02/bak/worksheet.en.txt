@@ -1,0 +1,11 @@
+1. At x=160 and speed=180, hold Right for one second. Predict x before a boundary is reached.
+
+My prediction / line evidence:
+
+Actual result:
+
+One rule I changed:
+
+Tester tried / observed difficulty / my revision:
+
+New exit task: New case: x=200, speed=120, dt=0.5 and Left held. What is the next x?

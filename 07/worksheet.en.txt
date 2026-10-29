@@ -1,0 +1,11 @@
+1. The drone begins at x=400 moving at +100 pixels/second. What happens at x=700, and later x=300?
+
+My prediction / line evidence:
+
+Actual result:
+
+One rule I changed:
+
+Tester tried / observed difficulty / my revision:
+
+New exit task: enemy_x=699, enemy_speed=100, dt=0.02. What are x and speed after the boundary code?

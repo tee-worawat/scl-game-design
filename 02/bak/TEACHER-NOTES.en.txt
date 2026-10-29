@@ -1,0 +1,104 @@
+02 · Make movement feel right
+
+Extract the full student package and follow the setup file on a classroom machine.
+
+Run the teacher reference.py, verify the predicted result and test teacher_example.py separately. Student starter.py intentionally contains TODOs.
+
+Keep teacher notes and answer keys out of projection. Display the actual Python window during Run.
+
+Print the trace/playtest worksheet. Prepare an offline paper fallback and assign rotating pair roles.
+
+
+Play · reconnect & prepare (8 min)
+
+Retrieve coordinates and if. Bridge: trace one update(dt) call, then repeat it; dt is elapsed seconds supplied by studio.py.
+
+PROMPT: Which part can you explain already?
+
+ANSWER: Retrieve coordinates and if. Bridge: trace one update(dt) call, then repeat it; dt is elapsed seconds supplied by studio.py.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Predict · read before running (8 min)
+
+Keep outcomes hidden. Give 2 minutes of quiet thinking, then 3 minutes of pair explanation and 3 minutes to sample individual predictions.
+
+PROMPT: At x=160 and speed=180, hold Right for one second. Predict x before a boundary is reached.
+
+ANSWER: Approximately x=340. Moving at 180 pixels per second uses speed×dt on every update. Releasing the key stops movement.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Run · compare with the prediction (8 min)
+
+Teacher opens the unedited reference.py from the teacher resources. Students observe this working reference, then implement the separate TODO skeleton. Follow SETUP.txt. Spend 3 minutes testing, 3 comparing and 2 resetting. Keep teacher_example.py hidden.
+
+PROMPT: At x=160 and speed=180, hold Right for one second. Predict x before a boundary is reached.
+
+ANSWER: Approximately x=340. Moving at 180 pixels per second uses speed×dt on every update. Releasing the key stops movement.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Investigate · explain the rule (16 min)
+
+Show the exact starter before running. Ask each learner to explain, not just read code. Rotate driver/navigator at the halfway point. Compare assignment once with repeated += updates. Trace one tenth of a second (18 pixels), then ten such updates. Explain the boundary clamps as supplied support.
+
+PROMPT: New case: x=200, speed=120, dt=0.5 and Left held. What is the next x?
+
+ANSWER: 140; subtract 60. With no key held it remains 200.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Modify · change one behaviour (15 min)
+
+Show the exact starter before running. Ask each learner to explain, not just read code. Rotate driver/navigator at the halfway point. Change speed from 180 to 240. Test whether reaching the landing pad feels easier or harder; keep the same route.
+
+PROMPT: Change speed from 180 to 240. Test whether reaching the landing pad feels easier or harder; keep the same route.
+
+ANSWER: Use the teacher modification example after learners attempt it. Verify the exact requested rule changed and restart still works.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Make · own a design decision (25 min)
+
+Plan for 5 minutes, build for 12, swap and playtest for 5, then save for 3. Scope down before adding another mechanic. Create a docking challenge using a chosen start and landing-pad position. Tune speed for precision, then let another pair attempt it.
+
+PROMPT: Create a docking challenge using a chosen start and landing-pad position. Tune speed for precision, then let another pair attempt it.
+
+ANSWER: Several designs are valid. Require a stated goal, a rule change, and evidence from a test; a reskin alone is insufficient.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Grow · explain, save & reset (10 min)
+
+Use 6 minutes for individual checks, 2 for reflection and 2 for save/cleanup. Log actual evidence later in the school system.
+
+PROMPT: New case: x=200, speed=120, dt=0.5 and Left held. What is the next x?
+
+ANSWER: 140; subtract 60. With no key held it remains 200.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+ASSESSMENT
+
+[
+  {
+    "objective_id": "O1",
+    "task": "New case: x=200, speed=120, dt=0.5 and Left held. What is the next x?",
+    "expected": "140; subtract 60. With no key held it remains 200.",
+    "next_step": "Act out check keys → update → draw repeatedly; blocking stops all three."
+  },
+  {
+    "objective_id": "O2",
+    "task": "Create a docking challenge using a chosen start and landing-pad position. Tune speed for precision, then let another pair attempt it.",
+    "expected": "A stated decision, prediction, observed result and explained revision; ask both partners independently.",
+    "next_step": "If copied, give a new start value or goal to transfer the rule. If explained independently, use the stretch."
+  }
+]

@@ -1,0 +1,3 @@
+Extract the entire ZIP. Use Python 3 (no packages). In this folder run python3 predict.py, python3 starter.py and python3 check_work.py (Windows: py instead of python3). Keep predictions before execution. starter.py intentionally contains TODOs. Teacher: reference.py is the complete mission; teacher_example.py demonstrates the badge modification. Run again to reset all objects.
+
+แตก ZIP ทั้งชุด ใช้ Python 3 ไม่ต้องติดตั้งแพ็กเกจ ในโฟลเดอร์รัน python3 predict.py, python3 starter.py และ python3 check_work.py (Windows ใช้ py แทน python3) คาดก่อนรัน starter.py มี TODO โดยตั้งใจ ครูใช้ reference.py เป็นภารกิจครบ และ teacher_example.py สาธิตการแก้ป้าย รันใหม่เพื่อรีเซ็ตทุกตัว

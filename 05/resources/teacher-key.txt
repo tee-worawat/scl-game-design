@@ -1,0 +1,6 @@
+Time decreases to zero; state becomes lose and updates return before collection. At exactly zero, timeout wins over collection in this rule order.
+
+1.25; at zero state becomes lose and the play guard blocks movement.
+
+Subtract one each frame and assume it means one second.
+Compare ten updates of 0.1 seconds with one second of elapsed time.

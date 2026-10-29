@@ -1,0 +1,1 @@
+Extract the entire ZIP. Use Python 3 (no packages). In this folder run python3 predict.py, python3 starter.py and python3 check_work.py (Windows: py instead of python3). Keep predictions before execution. starter.py intentionally contains TODOs. Teacher: reference.py is the complete mission; teacher_example.py demonstrates the badge modification. Run again to reset all objects.

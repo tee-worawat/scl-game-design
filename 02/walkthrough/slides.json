@@ -1,0 +1,615 @@
+{
+  "number": 2,
+  "slides": [
+    {
+      "title": {
+        "en": "One file. A visible game loop.",
+        "th": "ไฟล์เดียว เห็นลูปเกมครบ"
+      },
+      "caption": {
+        "en": "Import gives us tools; our loop decides when to use them.",
+        "th": "import ทำให้มีเครื่องมือ ลูปของเรากำหนดว่าจะใช้เมื่อไร"
+      },
+      "code": "import pygame\nwhile running:\n    keys = pygame.key.get_pressed()\n    pygame.display.flip()",
+      "source": "01_loop.py",
+      "diagram": {
+        "kind": "flow",
+        "labels": [
+          {
+            "en": "Get tools",
+            "th": "นำเครื่องมือมาใช้"
+          },
+          {
+            "en": "Read and update",
+            "th": "อ่านและอัปเดต"
+          },
+          {
+            "en": "Show frame",
+            "th": "แสดงเฟรม"
+          }
+        ],
+        "values": [
+          "import pygame",
+          "keys → x, y",
+          "display.flip()"
+        ],
+        "icons": [
+          null,
+          "robot",
+          "landing_pad"
+        ]
+      },
+      "question": {
+        "en": "Does import pygame move the robot?",
+        "th": "import pygame ทำให้หุ่นเดินไหม?"
+      },
+      "answer": {
+        "en": "No. The loop reads input, updates position and draws each frame.",
+        "th": "ไม่ ลูปอ่านปุ่ม อัปเดตตำแหน่ง และวาดทุกเฟรม"
+      }
+    },
+    {
+      "title": {
+        "en": "One tiny move, then another",
+        "th": "ขยับทีละก้าว แล้วอีกก้าว"
+      },
+      "caption": {
+        "en": "The loop caps dt at 0.05 seconds. speed is pixels per second.",
+        "th": "ลูปจำกัด dt ที่ 0.05 วินาที speed เป็นพิกเซลต่อวินาที"
+      },
+      "code": "dt = min(clock.tick(60) / 1000, 0.05)\nx += dx * speed * dt\ny += dy * speed * dt",
+      "source": "01_loop.py",
+      "diagram": {
+        "kind": "timeline",
+        "labels": [
+          {
+            "en": "Start",
+            "th": "เริ่ม"
+          },
+          {
+            "en": "Right: one update",
+            "th": "ขวา: อัปเดตครั้งหนึ่ง"
+          },
+          {
+            "en": "Right: next update",
+            "th": "ขวา: อัปเดตถัดไป"
+          }
+        ],
+        "values": [
+          "x = 160",
+          "1 × 180 × 0.05\nx = 169",
+          "x = 178"
+        ],
+        "bars": [
+          0.2,
+          0.21125,
+          0.2225
+        ]
+      },
+      "question": {
+        "en": "Release the key: dx=0. What changes next?",
+        "th": "ปล่อยปุ่ม dx=0 ครั้งถัดไปเปลี่ยนอะไร?"
+      },
+      "answer": {
+        "en": "Position stays 178; the loop still draws.",
+        "th": "ตำแหน่งคง 178 แต่ลูปยังวาดต่อ"
+      }
+    },
+    {
+      "title": {
+        "en": "Give your drawing a name",
+        "th": "ตั้งชื่อให้งานวาดของเรา"
+      },
+      "caption": {
+        "en": "A helper is a function for a named job. Keep it in main.py first.",
+        "th": "helper คือฟังก์ชันสำหรับงานหนึ่งอย่าง เริ่มเก็บใน main.py ก่อน"
+      },
+      "code": "def draw_scene(screen, pad, pad_position):\n    screen.fill(\"#DDF2FF\")\n    pygame.draw.rect(screen, \"#95C549\", (0, 420, 800, 180))\n    pygame.draw.rect(screen, \"#F7D34B\", (80, 390, 640, 18))\n    screen.blit(pad, pad.get_rect(center=pad_position))",
+      "source": "02_functions.py",
+      "diagram": {
+        "kind": "flow",
+        "labels": [
+          {
+            "en": "Clear",
+            "th": "ล้าง"
+          },
+          {
+            "en": "Build the scene",
+            "th": "สร้างฉาก"
+          },
+          {
+            "en": "Draw the player last",
+            "th": "วาดผู้เล่นท้ายสุด"
+          }
+        ],
+        "values": [
+          "sky colour",
+          "ground + route\n+ landing pad",
+          "robot on top"
+        ],
+        "icons": [
+          null,
+          "landing_pad",
+          "robot"
+        ]
+      },
+      "question": {
+        "en": "What if we clear the screen after drawing the player?",
+        "th": "ถ้าล้างจอหลังวาดผู้เล่นจะเกิดอะไร?"
+      },
+      "answer": {
+        "en": "It erases the player. Clear first; draw the background, pad and then player.",
+        "th": "ภาพผู้เล่นถูกลบ ล้างก่อน วาดพื้นหลัง แท่น แล้วผู้เล่น"
+      }
+    },
+    {
+      "title": {
+        "en": "Meet the Player blueprint",
+        "th": "รู้จักแบบของ Player"
+      },
+      "caption": {
+        "en": "The class describes a player. Calling Player(...) creates an instance.",
+        "th": "คลาสอธิบายผู้เล่น เรียก Player(...) เพื่อสร้าง instance"
+      },
+      "code": "class Player:\n    def __init__(self, x, y, image):\n        self.x = x\n        self.y = y\n        self.speed = 180\n        self.image = image\nplayer = Player(160, 300, robot_image)",
+      "source": "main.py",
+      "diagram": {
+        "kind": "objects",
+        "labels": [
+          {
+            "en": "Class",
+            "th": "คลาส"
+          },
+          {
+            "en": "Instance",
+            "th": "instance"
+          }
+        ],
+        "values": [
+          "Player\nstate + methods",
+          "player\nx = 160\ny = 300\nspeed = 180"
+        ],
+        "icons": [
+          null,
+          "robot"
+        ]
+      },
+      "question": {
+        "en": "Is the image the whole player object?",
+        "th": "รูปภาพคือออบเจ็กต์ผู้เล่นทั้งหมดไหม?"
+      },
+      "answer": {
+        "en": "No. The instance also owns position and speed, and uses move/draw methods.",
+        "th": "ไม่ instance ยังมีตำแหน่งและความเร็ว และใช้เมธอด move/draw"
+      }
+    },
+    {
+      "title": {
+        "en": "self means this player",
+        "th": "self คือผู้เล่นตัวนี้"
+      },
+      "caption": {
+        "en": "A method is a function on an object. The call chooses the receiver.",
+        "th": "เมธอดคือฟังก์ชันของออบเจ็กต์ การเรียกเลือกผู้รับคำสั่ง"
+      },
+      "code": "def move(self, dx, dy, dt):\n    self.x += dx * self.speed * dt\n    self.y += dy * self.speed * dt\n    self.x = max(32, min(768, self.x))\n    self.y = max(32, min(568, self.y))\nplayer.move(dx, dy, dt)",
+      "source": "main.py",
+      "diagram": {
+        "kind": "flow",
+        "labels": [
+          {
+            "en": "Before",
+            "th": "ก่อน"
+          },
+          {
+            "en": "Method call",
+            "th": "เรียกเมธอด"
+          },
+          {
+            "en": "After",
+            "th": "หลัง"
+          }
+        ],
+        "values": [
+          "player.x = 160",
+          "dx=1, dy=0\ndt=0.05\nself = player",
+          "player.x = 169"
+        ],
+        "icons": [
+          "robot",
+          null,
+          "robot"
+        ]
+      },
+      "question": {
+        "en": "Does player.draw(screen) change x?",
+        "th": "player.draw(screen) เปลี่ยน x ไหม?"
+      },
+      "answer": {
+        "en": "No. move changes state; draw reads that state to place the image.",
+        "th": "ไม่ move เปลี่ยนสถานะ draw อ่านสถานะเพื่อวางภาพ"
+      }
+    },
+    {
+      "title": {
+        "en": "Two players, two positions",
+        "th": "สองผู้เล่น สองตำแหน่ง"
+      },
+      "caption": {
+        "en": "This position-only probe uses None because it does not draw an image.",
+        "th": "ตัวอย่างนี้ไล่เฉพาะตำแหน่ง ใช้ None เพราะไม่วาดภาพ"
+      },
+      "code": "nova = Player(160, 300, None)\npip = Player(500, 300, None)\nnova.move(1, 0, 0.05)\nprint(nova.x, pip.x)",
+      "source": "object_probe.py",
+      "diagram": {
+        "kind": "objects",
+        "labels": [
+          {
+            "en": "Before",
+            "th": "ก่อน"
+          },
+          {
+            "en": "Move Nova only",
+            "th": "ขยับแค่ Nova"
+          },
+          {
+            "en": "Pip stays put",
+            "th": "Pip อยู่ที่เดิม"
+          }
+        ],
+        "values": [
+          "nova.x = 160\npip.x = 500",
+          "nova.x = 169",
+          "pip.x = 500"
+        ],
+        "icons": [
+          null,
+          "robot",
+          "robot"
+        ]
+      },
+      "question": {
+        "en": "Would creating Pip reset Nova?",
+        "th": "สร้าง Pip แล้ว Nova จะเริ่มใหม่ไหม?"
+      },
+      "answer": {
+        "en": "No. Each instance owns its attributes. self is Nova only during nova.move.",
+        "th": "ไม่ แต่ละ instance มีแอตทริบิวต์ของตน self เป็น Nova เฉพาะการเรียก nova.move"
+      }
+    },
+    {
+      "title": {
+        "en": "Same route. A different speed.",
+        "th": "เส้นทางเดิม ความเร็วใหม่"
+      },
+      "caption": {
+        "en": "Keep the start and target fixed for a fair comparison.",
+        "th": "คงจุดเริ่มและเป้าหมายเพื่อเทียบอย่างยุติธรรม"
+      },
+      "code": "self.speed = 240\nself.x += dx * self.speed * dt",
+      "source": "teacher_example.py",
+      "diagram": {
+        "kind": "flow",
+        "labels": [
+          {
+            "en": "Baseline",
+            "th": "เดิม"
+          },
+          {
+            "en": "Modified",
+            "th": "ปรับแล้ว"
+          }
+        ],
+        "values": [
+          "180 × 0.05\n9 pixels",
+          "240 × 0.05\n12 pixels"
+        ],
+        "icons": [
+          "robot",
+          "landing_pad"
+        ]
+      },
+      "question": {
+        "en": "Which speed helps you stop on the pad? Test your prediction.",
+        "th": "ความเร็วใดช่วยหยุดบนแท่น? ทดลองสิ่งที่คาด"
+      },
+      "answer": {
+        "en": "Preferences may differ. Use an observed docking attempt to explain the trade-off.",
+        "th": "ความชอบต่างกันได้ ใช้ผลลองจอดอธิบายข้อแลกเปลี่ยน"
+      }
+    },
+    {
+      "title": {
+        "en": "Your helper can travel",
+        "th": "ย้าย helper ไปใช้ซ้ำ"
+      },
+      "caption": {
+        "en": "Move the two helper definitions to scene.py. Keep the loop and Player in main.py.",
+        "th": "ย้ายนิยาม helper สองตัวไป scene.py คงลูปและ Player ใน main.py"
+      },
+      "code": "from scene import load_sprite, draw_scene\nrobot_image = load_sprite(images / \"robot.png\", 64)\ndraw_scene(screen, pad, pad_position)\nplayer.draw(screen)",
+      "source": "modular/main.py",
+      "diagram": {
+        "kind": "flow",
+        "labels": [
+          {
+            "en": "Define",
+            "th": "นิยาม"
+          },
+          {
+            "en": "Import",
+            "th": "นำเข้า"
+          },
+          {
+            "en": "Call",
+            "th": "เรียก"
+          }
+        ],
+        "values": [
+          "scene.py\nload_sprite\ndraw_scene",
+          "main.py\nfrom scene import …",
+          "once: load_sprite\neach frame:\ndraw_scene"
+        ]
+      },
+      "question": {
+        "en": "Does importing draw_scene draw a frame?",
+        "th": "import draw_scene แล้ววาดเฟรมเลยไหม?"
+      },
+      "answer": {
+        "en": "No. Import makes the helper available. Its call inside the loop draws the scene.",
+        "th": "ไม่ import ทำให้ใช้ helper ได้ การเรียกในลูปจึงวาดฉาก"
+      }
+    },
+    {
+      "title": {
+        "en": "Sprite lab · four ways to face",
+        "th": "ห้อง sprite · หันได้สี่ทิศ"
+      },
+      "caption": {
+        "en": "One robot, four pictures. Camera above the floor. Direction frames are not yet a walk animation.",
+        "th": "หุ่นหนึ่งตัว สี่ภาพ กล้องอยู่เหนือพื้น ภาพเปลี่ยนทิศยังไม่ใช่แอนิเมชันเดิน"
+      },
+      "code": "        \"up\": load_sprite(images / \"robot_up.png\", 64),\n        \"right\": load_sprite(images / \"robot_right.png\", 64),\n        \"down\": load_sprite(images / \"robot_down.png\", 64),\n        \"left\": load_sprite(images / \"robot_left.png\", 64),",
+      "source": "04_sprites.py",
+      "diagram": {
+        "kind": "flow",
+        "labels": [
+          {
+            "en": "Up",
+            "th": "ขึ้น"
+          },
+          {
+            "en": "Right",
+            "th": "ขวา"
+          },
+          {
+            "en": "Down",
+            "th": "ลง"
+          },
+          {
+            "en": "Left",
+            "th": "ซ้าย"
+          }
+        ],
+        "values": [
+          "up",
+          "right",
+          "down",
+          "left"
+        ],
+        "icons": [
+          "robot_up",
+          "robot_right",
+          "robot_down",
+          "robot_left"
+        ]
+      },
+      "question": {
+        "en": "Which picture shows the backpack most clearly?",
+        "th": "ภาพใดเห็นกระเป๋าด้านหลังชัดที่สุด?"
+      },
+      "answer": {
+        "en": "Up: we see the back. A sprite is a game image; Player holds its position and behaviour.",
+        "th": "ขึ้น: เห็นด้านหลัง sprite คือภาพในเกม Player เก็บตำแหน่งและพฤติกรรม"
+      }
+    },
+    {
+      "title": {
+        "en": "A wardrobe of pictures",
+        "th": "ตู้เก็บภาพของเรา"
+      },
+      "caption": {
+        "en": "A dictionary pairs each direction key with an image. Load once, before the loop.",
+        "th": "dictionary จับคู่คีย์ทิศกับภาพ โหลดครั้งเดียวก่อนลูป"
+      },
+      "code": "        self.sprites = sprites\n        self.facing = \"down\"\n        image = self.sprites[self.facing]",
+      "source": "04_sprites.py",
+      "diagram": {
+        "kind": "flow",
+        "labels": [
+          {
+            "en": "Key",
+            "th": "คีย์"
+          },
+          {
+            "en": "Image value",
+            "th": "ค่าภาพ"
+          },
+          {
+            "en": "Selected frame",
+            "th": "ภาพที่เลือก"
+          }
+        ],
+        "values": [
+          "\"down\"",
+          "sprites[\"down\"]",
+          "image"
+        ],
+        "icons": [
+          null,
+          "robot_down",
+          "robot_down"
+        ]
+      },
+      "question": {
+        "en": "Is the string \"down\" itself a picture?",
+        "th": "ข้อความ \"down\" เป็นภาพหรือไม่?"
+      },
+      "answer": {
+        "en": "No. The string is a key; the dictionary lookup returns the loaded image.",
+        "th": "ไม่ใช่ ข้อความคือคีย์ การเลือกค่าจาก dictionary จะได้ภาพที่โหลดไว้"
+      }
+    },
+    {
+      "title": {
+        "en": "Input chooses facing",
+        "th": "อินพุตเลือกทิศ"
+      },
+      "caption": {
+        "en": "Keep this chain inside Player.move. Vertical input wins diagonals.",
+        "th": "วางชุดเงื่อนไขนี้ใน Player.move แนวตั้งชนะเมื่อเดินเฉียง"
+      },
+      "code": "        if dy < 0:\n            self.facing = \"up\"\n        elif dy > 0:\n            self.facing = \"down\"\n        elif dx < 0:\n            self.facing = \"left\"\n        elif dx > 0:\n            self.facing = \"right\"",
+      "source": "04_sprites.py",
+      "diagram": {
+        "kind": "flow",
+        "labels": [
+          {
+            "en": "Up + Right",
+            "th": "ขึ้น + ขวา"
+          },
+          {
+            "en": "First true branch",
+            "th": "กิ่งแรกที่จริง"
+          },
+          {
+            "en": "Face up",
+            "th": "หันขึ้น"
+          }
+        ],
+        "values": [
+          "dx=1, dy=-1",
+          "dy < 0",
+          "facing=\"up\""
+        ],
+        "icons": [
+          null,
+          null,
+          "robot_up"
+        ]
+      },
+      "question": {
+        "en": "What changes if you put dx branches first?",
+        "th": "ถ้าเงื่อนไข dx มาก่อนจะเปลี่ยนอะไร?"
+      },
+      "answer": {
+        "en": "The picture faces right. Position still moves diagonally because both x/y updates remain.",
+        "th": "ภาพจะหันขวา ตำแหน่งยังเดินเฉียงเพราะยังอัปเดต x/y ทั้งคู่"
+      }
+    },
+    {
+      "title": {
+        "en": "Stop moving. Keep looking!",
+        "th": "หยุดเดิน แต่ยังหันเหมือนเดิม!"
+      },
+      "caption": {
+        "en": "No matching branch changes facing when both inputs are zero.",
+        "th": "เมื่ออินพุตทั้งสองเป็นศูนย์ ไม่มีกิ่งใดเปลี่ยน facing"
+      },
+      "code": "        self.x += dx * self.speed * dt\n        self.y += dy * self.speed * dt\n        image = self.sprites[self.facing]\n        rectangle = image.get_rect(center=(round(self.x), round(self.y)))\n        screen.blit(image, rectangle)",
+      "source": "04_sprites.py",
+      "diagram": {
+        "kind": "flow",
+        "labels": [
+          {
+            "en": "Hold Right",
+            "th": "กดขวา"
+          },
+          {
+            "en": "Release",
+            "th": "ปล่อย"
+          },
+          {
+            "en": "Hold Up",
+            "th": "กดขึ้น"
+          }
+        ],
+        "values": [
+          "right",
+          "right",
+          "up"
+        ],
+        "icons": [
+          "robot_right",
+          "robot_right",
+          "robot_up"
+        ]
+      },
+      "question": {
+        "en": "Would else: facing=\"down\" keep this memory?",
+        "th": "ถ้ามี else ตั้ง facing=\"down\" จะจำทิศได้ไหม?"
+      },
+      "answer": {
+        "en": "No. It would face down on release. Choosing a picture and changing position are separate jobs.",
+        "th": "ไม่ได้ จะหันลงเมื่อปล่อย การเลือกภาพและการเปลี่ยนตำแหน่งเป็นคนละงาน"
+      }
+    },
+    {
+      "title": {
+        "en": "Two players, two directions",
+        "th": "สองผู้เล่น สองทิศ"
+      },
+      "caption": {
+        "en": "Each object keeps its own facing. They may share the image library.",
+        "th": "แต่ละออบเจ็กต์เก็บ facing ของตน ใช้คลังภาพเดียวกันได้"
+      },
+      "code": "    def __init__(self, x, y, sprites):\n        self.x = x\n        self.y = y\n        self.speed = 180\n        self.sprites = sprites\n        self.facing = \"down\"",
+      "source": "04_sprites.py",
+      "diagram": {
+        "kind": "objects",
+        "labels": [
+          {
+            "en": "Only a moves left",
+            "th": "เฉพาะ a เดินซ้าย"
+          },
+          {
+            "en": "Then a stops",
+            "th": "แล้ว a หยุด"
+          },
+          {
+            "en": "b was not moved",
+            "th": "b ไม่ได้เคลื่อนที่"
+          }
+        ],
+        "values": [
+          "a: left",
+          "a: left",
+          "b: down"
+        ],
+        "icons": [
+          "robot_left",
+          "robot_left",
+          "robot_down"
+        ]
+      },
+      "question": {
+        "en": "Which attribute is different, even with the same sprites dictionary?",
+        "th": "แม้ใช้ dictionary sprites เดียวกัน แอตทริบิวต์ใดต่างกัน?"
+      },
+      "answer": {
+        "en": "self.facing. Changing a.facing does not change b.facing. Trace a new input for each object.",
+        "th": "self.facing เปลี่ยน a.facing ไม่เปลี่ยน b.facing ลองไล่อินพุตใหม่ให้แต่ละตัว"
+      }
+    }
+  ],
+  "cover": {
+    "title": {
+      "en": "Build a player that moves",
+      "th": "สร้างผู้เล่นที่เคลื่อนไหว"
+    },
+    "intro": {
+      "en": "Start in one file. Give your player its own state, then share your scene helpers.",
+      "th": "เริ่มไฟล์เดียว ให้ผู้เล่นมีสถานะของตน แล้วแยกตัวช่วยฉากเพื่อใช้ซ้ำ"
+    }
+  }
+}

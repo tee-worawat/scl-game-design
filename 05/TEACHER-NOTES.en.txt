@@ -1,0 +1,104 @@
+05 · A fair countdown
+
+Extract the full student package and follow the setup file on a classroom machine.
+
+Run the teacher reference.py, verify the predicted result and test teacher_example.py separately. Student starter.py intentionally contains TODOs.
+
+Keep teacher notes and answer keys out of projection. Display the actual Python window during Run.
+
+Print the trace/playtest worksheet. Prepare an offline paper fallback and assign rotating pair roles.
+
+
+Play · reconnect & prepare (8 min)
+
+Retrieve dt, state and reset. Decimal subtraction is a bridge, not a new requirement to memorize frame rates.
+
+PROMPT: Which part can you explain already?
+
+ANSWER: Retrieve dt, state and reset. Decimal subtraction is a bridge, not a new requirement to memorize frame rates.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Predict · read before running (8 min)
+
+Keep outcomes hidden. Give 2 minutes of quiet thinking, then 3 minutes of pair explanation and 3 minutes to sample individual predictions.
+
+PROMPT: Do nothing for eight seconds. What changes? Can you collect a battery after time reaches zero?
+
+ANSWER: Time decreases to zero; state becomes lose and updates return before collection. At exactly zero, timeout wins over collection in this rule order.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Run · compare with the prediction (8 min)
+
+Teacher opens the unedited reference.py from the teacher resources. Students observe this working reference, then implement the separate TODO skeleton. Follow SETUP.txt. Spend 3 minutes testing, 3 comparing and 2 resetting. Keep teacher_example.py hidden.
+
+PROMPT: Do nothing for eight seconds. What changes? Can you collect a battery after time reaches zero?
+
+ANSWER: Time decreases to zero; state becomes lose and updates return before collection. At exactly zero, timeout wins over collection in this rule order.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Investigate · explain the rule (16 min)
+
+Show the exact starter before running. Ask each learner to explain, not just read code. Rotate driver/navigator at the halfway point. Trace time_left=0.02 with dt=0.03. Explain max(0,…) and why time.sleep would freeze controls.
+
+PROMPT: time_left=1.5 and dt=0.25: what is the next value? At zero, which state prevents movement?
+
+ANSWER: 1.25; at zero state becomes lose and the play guard blocks movement.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Modify · change one behaviour (15 min)
+
+Show the exact starter before running. Ask each learner to explain, not just read code. Rotate driver/navigator at the halfway point. Change the deadline from 8 to 12 seconds. Compare three attempts on the same route; record no student names.
+
+PROMPT: Change the deadline from 8 to 12 seconds. Compare three attempts on the same route; record no student names.
+
+ANSWER: Use the teacher modification example after learners attempt it. Verify the exact requested rule changed and restart still works.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Make · own a design decision (25 min)
+
+Plan for 5 minutes, build for 12, swap and playtest for 5, then save for 3. Scope down before adding another mechanic. Choose a time limit for a precision mission. Justify it using attempts and allow an untimed practice version.
+
+PROMPT: Choose a time limit for a precision mission. Justify it using attempts and allow an untimed practice version.
+
+ANSWER: Several designs are valid. Require a stated goal, a rule change, and evidence from a test; a reskin alone is insufficient.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Grow · explain, save & reset (10 min)
+
+Use 6 minutes for individual checks, 2 for reflection and 2 for save/cleanup. Log actual evidence later in the school system.
+
+PROMPT: time_left=1.5 and dt=0.25: what is the next value? At zero, which state prevents movement?
+
+ANSWER: 1.25; at zero state becomes lose and the play guard blocks movement.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+ASSESSMENT
+
+[
+  {
+    "objective_id": "O1",
+    "task": "time_left=1.5 and dt=0.25: what is the next value? At zero, which state prevents movement?",
+    "expected": "1.25; at zero state becomes lose and the play guard blocks movement.",
+    "next_step": "Compare ten updates of 0.1 seconds with one second of elapsed time."
+  },
+  {
+    "objective_id": "O2",
+    "task": "Choose a time limit for a precision mission. Justify it using attempts and allow an untimed practice version.",
+    "expected": "A stated decision, prediction, observed result and explained revision; ask both partners independently.",
+    "next_step": "If copied, give a new start value or goal to transfer the rule. If explained independently, use the stretch."
+  }
+]

@@ -1,0 +1,11 @@
+1. After touching the crystal and staying still on it, will collected keep changing? Does the image return when we leave?
+
+My prediction / line evidence:
+
+Actual result:
+
+One rule I changed:
+
+Tester tried / observed difficulty / my revision:
+
+New exit task: If collected is already True and the robot touches the old location again, is the guarded block entered? Explain both parts of the condition.

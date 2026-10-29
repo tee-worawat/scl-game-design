@@ -1,0 +1,6 @@
+collected changes from False to True once. The crystal stays hidden until restarting. The collision rule uses 48×48 rectangles, not opaque pixels.
+
+No: not collected is False, so the and condition fails even if touching is True.
+
+Hide an image but assume its game state also changed.
+Trace drawing and logic separately; cover one function and predict the other.

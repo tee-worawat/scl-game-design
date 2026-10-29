@@ -1,0 +1,6 @@
+It appears left of center, halfway down; x=600 moves it right without changing height. This is a static scene, not yet a game.
+
+Change y to 200; x stays 240. The center moves down, not up.
+
+A larger y moves upward as on a maths graph.
+Mark the screen top-left on paper and count rows down.

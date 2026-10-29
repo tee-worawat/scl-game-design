@@ -1,0 +1,6 @@
+Collection gives 10 once and sets win. Waiting adds nothing. R restores score=0, state=play, (160,300), and collected=False.
+
+The item remains hidden and cannot be collected. Add collected=False in reset, with its global binding.
+
+Reset only the score and leave the other state from the previous attempt.
+Use a before/after checklist for x, y, score, collected and state.

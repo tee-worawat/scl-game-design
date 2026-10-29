@@ -1,0 +1,211 @@
+{
+  "id": "game-designer-05",
+  "title": "05 · A fair countdown",
+  "status": "draft",
+  "course": {
+    "code": "GD-PROPOSED",
+    "title": "Game Designer",
+    "url": "https://app.notion.com/p/5fe47f6d476940d2bfd7692fd1af8560"
+  },
+  "ages": {
+    "min": 10,
+    "max": 15
+  },
+  "duration_minutes": 90,
+  "language": "English / Thai guidance · English Python identifiers",
+  "assumptions": [
+    "New proposed course for the C2–C3 readiness range, not an approved replacement for Creator 2 or Creator 3.",
+    "Provisional pre-lesson 90 minutes + 10 × 90 minutes; 8 learners, one computer per learner or rotating pairs. Ages 10–15 are a design assumption; placement uses readiness.",
+    "Desktop Python required. First install needs internet; classroom OS and editor must be checked by the teacher.",
+    "Generated assets and support code are supplied resources, not evidence of student authorship."
+  ],
+  "objectives": [
+    {
+      "id": "O1",
+      "statement": "Explain and predict: Elapsed time changes a game state",
+      "evidence": "time_left=1.5 and dt=0.25: what is the next value? At zero, which state prevents movement?"
+    },
+    {
+      "id": "O2",
+      "statement": "Design and test a meaningful change to this mechanic.",
+      "evidence": "Choose a time limit for a precision mission. Justify it using attempts and allow an untimed practice version."
+    }
+  ],
+  "prerequisites": [
+    "Retrieve dt, state and reset. Decimal subtraction is a bridge, not a new requirement to memorize frame rates."
+  ],
+  "entry_check": "Retrieve dt, state and reset. Decimal subtraction is a bridge, not a new requirement to memorize frame rates. If the trace needs heavy prompting, spend the first 8 minutes on the bridge and use the support route.",
+  "materials": [
+    "Tested desktop Python 3.12 + pygame-ce 2.5.8; keyboard; offline extracted student ZIP.",
+    "Projector, paper coordinate frame / trace sheet, and the supplied PNG assets."
+  ],
+  "prep": [
+    "Extract the full student package and follow the setup file on a classroom machine.",
+    "Run the teacher reference.py, verify the predicted result and test teacher_example.py separately. Student starter.py intentionally contains TODOs.",
+    "Keep teacher notes and answer keys out of projection. Display the actual Python window during Run.",
+    "Print the trace/playtest worksheet. Prepare an offline paper fallback and assign rotating pair roles."
+  ],
+  "stages": [
+    {
+      "id": "welcome",
+      "name": "Play · reconnect & prepare",
+      "primm": null,
+      "minutes": 8,
+      "teacher": "Retrieve dt, state and reset. Decimal subtraction is a bridge, not a new requirement to memorize frame rates.",
+      "prompt": "Which part can you explain already?",
+      "learner": "Trace the retrieval example and check the files.",
+      "evidence": "Listen for a causal explanation tied to a variable, condition or line; check each partner independently.",
+      "answer": "Retrieve dt, state and reset. Decimal subtraction is a bridge, not a new requirement to memorize frame rates.",
+      "misconception": "Subtract one each frame and assume it means one second.",
+      "response": "Compare ten updates of 0.1 seconds with one second of elapsed time."
+    },
+    {
+      "id": "predict",
+      "name": "Predict · read before running",
+      "primm": "Predict",
+      "minutes": 8,
+      "teacher": "Keep outcomes hidden. Give 2 minutes of quiet thinking, then 3 minutes of pair explanation and 3 minutes to sample individual predictions.",
+      "prompt": "Do nothing for eight seconds. What changes? Can you collect a battery after time reaches zero?",
+      "learner": "Sketch or say a prediction and cite one line.",
+      "evidence": "Listen for a causal explanation tied to a variable, condition or line; check each partner independently.",
+      "answer": "Time decreases to zero; state becomes lose and updates return before collection. At exactly zero, timeout wins over collection in this rule order.",
+      "misconception": "Subtract one each frame and assume it means one second.",
+      "response": "Compare ten updates of 0.1 seconds with one second of elapsed time."
+    },
+    {
+      "id": "run",
+      "name": "Run · compare with the prediction",
+      "primm": "Run",
+      "minutes": 8,
+      "teacher": "Teacher opens the unedited reference.py from the teacher resources. Students observe this working reference, then implement the separate TODO skeleton. Follow SETUP.txt. Spend 3 minutes testing, 3 comparing and 2 resetting. Keep teacher_example.py hidden.",
+      "prompt": "Do nothing for eight seconds. What changes? Can you collect a battery after time reaches zero?",
+      "learner": "Run the same code and note one match or mismatch.",
+      "evidence": "Listen for a causal explanation tied to a variable, condition or line; check each partner independently.",
+      "answer": "Time decreases to zero; state becomes lose and updates return before collection. At exactly zero, timeout wins over collection in this rule order.",
+      "misconception": "Subtract one each frame and assume it means one second.",
+      "response": "Compare ten updates of 0.1 seconds with one second of elapsed time."
+    },
+    {
+      "id": "investigate",
+      "name": "Investigate · explain the rule",
+      "primm": "Investigate",
+      "minutes": 16,
+      "teacher": "Show the exact starter before running. Ask each learner to explain, not just read code. Rotate driver/navigator at the halfway point. Trace time_left=0.02 with dt=0.03. Explain max(0,…) and why time.sleep would freeze controls.",
+      "prompt": "time_left=1.5 and dt=0.25: what is the next value? At zero, which state prevents movement?",
+      "learner": "Trace a new state on paper, then check the relevant line.",
+      "evidence": "Listen for a causal explanation tied to a variable, condition or line; check each partner independently.",
+      "answer": "1.25; at zero state becomes lose and the play guard blocks movement.",
+      "misconception": "Subtract one each frame and assume it means one second.",
+      "response": "Compare ten updates of 0.1 seconds with one second of elapsed time."
+    },
+    {
+      "id": "modify",
+      "name": "Modify · change one behaviour",
+      "primm": "Modify",
+      "minutes": 15,
+      "teacher": "Show the exact starter before running. Ask each learner to explain, not just read code. Rotate driver/navigator at the halfway point. Change the deadline from 8 to 12 seconds. Compare three attempts on the same route; record no student names.",
+      "prompt": "Change the deadline from 8 to 12 seconds. Compare three attempts on the same route; record no student names.",
+      "learner": "Predict the effect, edit, run and compare. Save a separate version.",
+      "evidence": "Listen for a causal explanation tied to a variable, condition or line; check each partner independently.",
+      "answer": "Use the teacher modification example after learners attempt it. Verify the exact requested rule changed and restart still works.",
+      "misconception": "Subtract one each frame and assume it means one second.",
+      "response": "Compare ten updates of 0.1 seconds with one second of elapsed time."
+    },
+    {
+      "id": "make",
+      "name": "Make · own a design decision",
+      "primm": "Make",
+      "minutes": 25,
+      "teacher": "Plan for 5 minutes, build for 12, swap and playtest for 5, then save for 3. Scope down before adding another mechanic. Choose a time limit for a precision mission. Justify it using attempts and allow an untimed practice version.",
+      "prompt": "Choose a time limit for a precision mission. Justify it using attempts and allow an untimed practice version.",
+      "learner": "Make a meaningful choice and ask another person to test it without coaching every step.",
+      "evidence": "Listen for a causal explanation tied to a variable, condition or line; check each partner independently.",
+      "answer": "Several designs are valid. Require a stated goal, a rule change, and evidence from a test; a reskin alone is insufficient.",
+      "misconception": "Subtract one each frame and assume it means one second.",
+      "response": "Compare ten updates of 0.1 seconds with one second of elapsed time."
+    },
+    {
+      "id": "grow",
+      "name": "Grow · explain, save & reset",
+      "primm": null,
+      "minutes": 10,
+      "teacher": "Use 6 minutes for individual checks, 2 for reflection and 2 for save/cleanup. Log actual evidence later in the school system.",
+      "prompt": "time_left=1.5 and dt=0.25: what is the next value? At zero, which state prevents movement?",
+      "learner": "Answer independently, save the project folder and name one next step.",
+      "evidence": "Listen for a causal explanation tied to a variable, condition or line; check each partner independently.",
+      "answer": "1.25; at zero state becomes lose and the play guard blocks movement.",
+      "misconception": "Subtract one each frame and assume it means one second.",
+      "response": "Compare ten updates of 0.1 seconds with one second of elapsed time."
+    }
+  ],
+  "differentiation": {
+    "support": "Use an untimed route first; trace three decimal updates on paper.",
+    "core": "Change the deadline from 8 to 12 seconds. Compare three attempts on the same route; record no student names.",
+    "stretch": "Design and explain a pause rule that freezes both movement and the countdown.",
+    "access": "Accept Thai oral explanations or a paper trace. Enlarge code and reduce typing with the starter. Use untimed practice and a no-flash option. Distinguish keyboard difficulty from understanding.",
+    "late_arrival": "Use the supplied starter checkpoint; trace one rule with the navigator, then take a driver turn and an individual exit check.",
+    "short_route": "60-minute route: setup 5, Predict 5, Run 5, Investigate 10, Modify 12, Make 15, Grow 8. Keep one design choice and the individual check; defer extra polish.",
+    "fallback": "Act as the computer using the exact starter code, paper variables and sprite cards. Predict and trace the same state changes. This checks reasoning but does not verify graphics, keyboard control or installation."
+  },
+  "assessment": [
+    {
+      "objective_id": "O1",
+      "task": "time_left=1.5 and dt=0.25: what is the next value? At zero, which state prevents movement?",
+      "expected": "1.25; at zero state becomes lose and the play guard blocks movement.",
+      "next_step": "Compare ten updates of 0.1 seconds with one second of elapsed time."
+    },
+    {
+      "objective_id": "O2",
+      "task": "Choose a time limit for a precision mission. Justify it using attempts and allow an untimed practice version.",
+      "expected": "A stated decision, prediction, observed result and explained revision; ask both partners independently.",
+      "next_step": "If copied, give a new start value or goal to transfer the rule. If explained independently, use the stretch."
+    }
+  ],
+  "reflection": "I expected… The test showed… I changed… Next I will…",
+  "parent_prompt": "Today: [mechanic]. Evidence: [actual independent action/explanation and support used]. Next: [one step from that evidence]. Do not infer achievement from the planned lesson.",
+  "next_lesson": "A list and loop apply the same rule repeatedly",
+  "motto": {
+    "play": "Test a small playable rule.",
+    "think": "Do nothing for eight seconds. What changes? Can you collect a battery after time reaches zero?",
+    "code": "Change the deadline from 8 to 12 seconds. Compare three attempts on the same route; record no student names.",
+    "create": "Choose a time limit for a precision mission. Justify it using attempts and allow an untimed practice version.",
+    "grow": "time_left=1.5 and dt=0.25: what is the next value? At zero, which state prevents movement?"
+  },
+  "resources": [
+    {
+      "title": "Setup and run instructions",
+      "filename": "setup.txt",
+      "use": "Teacher preflight; install before class.",
+      "content": "GAME DESIGNER · desktop Python starter\nUse Python 3.12 and pygame-ce 2.5.8 (the development test environment).\nTeacher: install and test on every classroom OS before class. Other Python versions are unverified.\n\nExtract the WHOLE ZIP. Keep starter.py, studio.py, images/ and fonts/ together.\nOpen a terminal in the extracted folder.\nWindows: py -3.12 -m venv .venv\nmacOS/Linux: python3.12 -m venv .venv\nWindows install: .venv\\Scripts\\python -m pip install -r requirements.txt\nmacOS/Linux install: .venv/bin/python -m pip install -r requirements.txt\nWindows run: .venv\\Scripts\\python starter.py\nmacOS/Linux run: .venv/bin/python starter.py\n\nInitial installation needs internet and permission to install packages. Afterwards games run locally without accounts or internet. A Chromebook/browser-only device is not an assumed supported setup.\nKeep a tested copy of each lesson for catch-up. Do not name your file pygame.py.\n\nControls: arrows move from lesson 2; R resets from lesson 4; Esc or close quits.\nHold H to show the player's 48×48 hitbox. Artwork is scaled at runtime; source PNGs are unchanged.\nLesson 1 is a static scene. Lessons 1–3 restart by closing and running again.\nEach lesson is a separate concept checkpoint, not a promise that every earlier mechanic is carried forward.\nLessons 6–10 omit the countdown; lesson 8 onward omit the patrol to isolate data and design.\n\nstudio.py is teacher-provided infrastructure. It owns window/events, dt, graphics, font loading and a simple touching helper. Read it when ready; it is not learner-authored evidence. Students edit starter.py. Pre-lesson 00 introduces simple classes and independent objects. The graphical lessons use functions; inheritance, a physics engine and Unity syntax are not required.\nGame UI and code identifiers use English; teacher guidance is bilingual. Accept Thai explanations.\n"
+    },
+    {
+      "title": "Prediction and playtest sheet",
+      "filename": "worksheet.txt",
+      "use": "Print or edit; do not put student records on the public guide.",
+      "content": "1. Do nothing for eight seconds. What changes? Can you collect a battery after time reaches zero?\n\nMy prediction / line evidence:\n\nActual result:\n\nOne rule I changed:\n\nTester tried / observed difficulty / my revision:\n\nNew exit task: time_left=1.5 and dt=0.25: what is the next value? At zero, which state prevents movement?"
+    },
+    {
+      "title": "Teacher answer key",
+      "filename": "teacher-key.txt",
+      "use": "Keep hidden until after prediction.",
+      "content": "Time decreases to zero; state becomes lose and updates return before collection. At exactly zero, timeout wins over collection in this rule order.\n\n1.25; at zero state becomes lose and the play guard blocks movement.\n\nSubtract one each frame and assume it means one second.\nCompare ten updates of 0.1 seconds with one second of elapsed time."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Spark Course Library",
+      "url": "https://app.notion.com/p/5fe47f6d476940d2bfd7692fd1af8560",
+      "role": "Reference for existing courses; Game Designer is a new proposal."
+    },
+    {
+      "title": "Pygame CE documentation",
+      "url": "https://pyga.me/docs/",
+      "role": "Technical reference; teaching scaffold and progression are our proposal."
+    }
+  ],
+  "review": {
+    "structural": "Both language files checked by the shared lesson validator.",
+    "interaction": "See course review.md for the actual test scope.",
+    "classroom": "Not classroom-trialled. Timing, Thai teaching wording and device setup require a pilot."
+  }
+}

@@ -1,0 +1,104 @@
+07 · Make a patrol predictable
+
+Extract the full student package and follow the setup file on a classroom machine.
+
+Run the teacher reference.py, verify the predicted result and test teacher_example.py separately. Student starter.py intentionally contains TODOs.
+
+Keep teacher notes and answer keys out of projection. Display the actual Python window during Run.
+
+Print the trace/playtest worksheet. Prepare an offline paper fallback and assign rotating pair roles.
+
+
+Play · reconnect & prepare (8 min)
+
+Retrieve lists, collision and dt. Bridge positive/negative motion with a number-line arrow.
+
+PROMPT: Which part can you explain already?
+
+ANSWER: Retrieve lists, collision and dt. Bridge positive/negative motion with a number-line arrow.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Predict · read before running (8 min)
+
+Keep outcomes hidden. Give 2 minutes of quiet thinking, then 3 minutes of pair explanation and 3 minutes to sample individual predictions.
+
+PROMPT: The drone begins at x=400 moving at +100 pixels/second. What happens at x=700, and later x=300?
+
+ANSWER: It clamps to the boundary and reverses to -100 at the right edge, then +100 at the left. Its y stays 220.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Run · compare with the prediction (8 min)
+
+Teacher opens the unedited reference.py from the teacher resources. Students observe this working reference, then implement the separate TODO skeleton. Follow SETUP.txt. Spend 3 minutes testing, 3 comparing and 2 resetting. Keep teacher_example.py hidden.
+
+PROMPT: The drone begins at x=400 moving at +100 pixels/second. What happens at x=700, and later x=300?
+
+ANSWER: It clamps to the boundary and reverses to -100 at the right edge, then +100 at the left. Its y stays 220.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Investigate · explain the rule (16 min)
+
+Show the exact starter before running. Ask each learner to explain, not just read code. Rotate driver/navigator at the halfway point. Trace enemy_x+=enemy_speed*dt. Explain the clamp plus sign change; distinguish a predictable patrol from intelligent pathfinding.
+
+PROMPT: enemy_x=699, enemy_speed=100, dt=0.02. What are x and speed after the boundary code?
+
+ANSWER: x=700 and speed=-100. The computed 701 is clamped.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Modify · change one behaviour (15 min)
+
+Show the exact starter before running. Ask each learner to explain, not just read code. Rotate driver/navigator at the halfway point. Reduce patrol speed from 100 to 70. Compare the same crossing route for fairness.
+
+PROMPT: Reduce patrol speed from 100 to 70. Compare the same crossing route for fairness.
+
+ANSWER: Use the teacher modification example after learners attempt it. Verify the exact requested rule changed and restart still works.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Make · own a design decision (25 min)
+
+Plan for 5 minutes, build for 12, swap and playtest for 5, then save for 3. Scope down before adding another mechanic. Choose a patrol corridor and a safe crossing opportunity. Ask a tester to explain the pattern without being told.
+
+PROMPT: Choose a patrol corridor and a safe crossing opportunity. Ask a tester to explain the pattern without being told.
+
+ANSWER: Several designs are valid. Require a stated goal, a rule change, and evidence from a test; a reskin alone is insufficient.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Grow · explain, save & reset (10 min)
+
+Use 6 minutes for individual checks, 2 for reflection and 2 for save/cleanup. Log actual evidence later in the school system.
+
+PROMPT: enemy_x=699, enemy_speed=100, dt=0.02. What are x and speed after the boundary code?
+
+ANSWER: x=700 and speed=-100. The computed 701 is clamped.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+ASSESSMENT
+
+[
+  {
+    "objective_id": "O1",
+    "task": "enemy_x=699, enemy_speed=100, dt=0.02. What are x and speed after the boundary code?",
+    "expected": "x=700 and speed=-100. The computed 701 is clamped.",
+    "next_step": "Track position and velocity in separate columns for three updates."
+  },
+  {
+    "objective_id": "O2",
+    "task": "Choose a patrol corridor and a safe crossing opportunity. Ask a tester to explain the pattern without being told.",
+    "expected": "A stated decision, prediction, observed result and explained revision; ask both partners independently.",
+    "next_step": "If copied, give a new start value or goal to transfer the rule. If explained independently, use the stretch."
+  }
+]

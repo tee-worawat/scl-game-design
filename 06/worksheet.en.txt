@@ -1,0 +1,11 @@
+1. How many crystals and asteroids appear? What score follows collecting all crystals without touching a rock?
+
+My prediction / line evidence:
+
+Actual result:
+
+One rule I changed:
+
+Tester tried / observed difficulty / my revision:
+
+New exit task: A new list has four targets worth 10 each. Two remain. What score should be shown? Why iterate a copy when removing?

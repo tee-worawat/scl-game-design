@@ -1,0 +1,50 @@
+GAME DESIGNER · desktop Python starter
+Use Python 3.12 and pygame-ce 2.5.8 (the development test environment).
+Teacher: install and test on every classroom OS before class. Other Python versions are unverified.
+
+Extract the WHOLE ZIP. Keep starter.py, studio.py, images/ and fonts/ together.
+Open a terminal in the extracted folder.
+Windows: py -3.12 -m venv .venv
+macOS/Linux: python3.12 -m venv .venv
+Windows install: .venv\Scripts\python -m pip install -r requirements.txt
+macOS/Linux install: .venv/bin/python -m pip install -r requirements.txt
+Windows run: .venv\Scripts\python starter.py
+macOS/Linux run: .venv/bin/python starter.py
+
+Initial installation needs internet and permission to install packages. Afterwards games run locally without accounts or internet. A Chromebook/browser-only device is not an assumed supported setup.
+Keep a tested copy of each lesson for catch-up. Do not name your file pygame.py.
+
+Controls: arrows move from lesson 2; R resets from lesson 4; Esc or close quits.
+Hold H to show the player's 48×48 hitbox. Artwork is scaled at runtime; source PNGs are unchanged.
+Lesson 1 is a static scene. Lessons 1–3 restart by closing and running again.
+Each lesson is a separate concept checkpoint, not a promise that every earlier mechanic is carried forward.
+Lessons 6–10 omit the countdown; lesson 8 onward omit the patrol to isolate data and design.
+
+studio.py is teacher-provided infrastructure. It owns window/events, dt, graphics, font loading and a simple touching helper. Read it when ready; it is not learner-authored evidence. Students edit starter.py. Pre-lesson 00 introduces simple classes and independent objects. The graphical lessons use functions; inheritance, a physics engine and Unity syntax are not required.
+Game UI and code identifiers use English; teacher guidance is bilingual. Accept Thai explanations.
+
+
+GAME DESIGNER · ชุด Python บนคอมพิวเตอร์
+ใช้ Python 3.12 และ pygame-ce 2.5.8 ตามสภาพแวดล้อมทดสอบ
+ครูต้องติดตั้งและลองบนระบบของห้องเรียนก่อนคาบ เวอร์ชันอื่นยังไม่ยืนยัน
+
+แตก ZIP ทั้งชุด เก็บ starter.py, studio.py, images/ และ fonts/ ไว้ด้วยกัน
+เปิดเทอร์มินัลในโฟลเดอร์ที่แตกไฟล์
+Windows: py -3.12 -m venv .venv
+macOS/Linux: python3.12 -m venv .venv
+ติดตั้งบน Windows: .venv\Scripts\python -m pip install -r requirements.txt
+ติดตั้งบน macOS/Linux: .venv/bin/python -m pip install -r requirements.txt
+รันบน Windows: .venv\Scripts\python starter.py
+รันบน macOS/Linux: .venv/bin/python starter.py
+
+ติดตั้งครั้งแรกต้องมีอินเทอร์เน็ตและสิทธิ์ติดตั้ง หลังจากนั้นเกมเล่นในเครื่องได้ ไม่ต้องมีบัญชีหรืออินเทอร์เน็ต ไม่สมมติว่ารองรับเครื่องที่ใช้ได้เฉพาะเบราว์เซอร์/Chromebook
+อย่าตั้งชื่อไฟล์ว่า pygame.py เก็บชุดที่ทดสอบแล้วสำหรับผู้เรียนที่ตามไม่ทัน
+
+ปุ่มลูกศรเริ่มใช้บท 2 ปุ่ม R รีเซ็ตตั้งแต่บท 4 Esc หรือปิดหน้าต่างเพื่อออก
+กด H ดูกรอบชนผู้เล่น 48×48 ภาพปรับขนาดเฉพาะตอนวาด ไม่แก้ PNG ต้นฉบับ
+บท 1 เป็นฉากนิ่ง บท 1–3 เริ่มใหม่ด้วยการปิดแล้วรันอีกครั้ง
+แต่ละบทเป็นจุดฝึกแนวคิดแยก ไม่ได้สะสมทุกกลไกก่อนหน้าเสมอ บท 6–10 ไม่มีจับเวลา บท 8 เป็นต้นไปไม่มีลาดตระเวน เพื่อเน้นข้อมูลและออกแบบ
+
+studio.py เป็นโครงสร้างที่ครูเตรียมให้ ดูแลหน้าต่าง เหตุการณ์ dt ภาพ ฟอนต์ และตัวช่วยตรวจชน ไม่ใช่หลักฐานว่าผู้เรียนเขียนเอง ผู้เรียนแก้ starter.py บทเตรียม 00 แนะนำคลาสง่าย ๆ และออบเจ็กต์แยกกัน บทกราฟิกใช้ฟังก์ชัน ไม่ต้องใช้ inheritance ฟิสิกส์ หรือไวยากรณ์ Unity
+ข้อความในเกมและชื่อในโค้ดเป็นอังกฤษ คู่มือเป็นสองภาษา ตอบอธิบายภาษาไทยได้
+

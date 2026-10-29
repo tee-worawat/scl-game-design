@@ -1,0 +1,104 @@
+03 · Collect once
+
+Extract the full student package and follow the setup file on a classroom machine.
+
+Run the teacher reference.py, verify the predicted result and test teacher_example.py separately. Student starter.py intentionally contains TODOs.
+
+Keep teacher notes and answer keys out of projection. Display the actual Python window during Run.
+
+Print the trace/playtest worksheet. Prepare an offline paper fallback and assign rotating pair roles.
+
+
+Play · reconnect & prepare (8 min)
+
+Retrieve movement and if. Bridge: True/False and not using a physical collected card.
+
+PROMPT: Which part can you explain already?
+
+ANSWER: Retrieve movement and if. Bridge: True/False and not using a physical collected card.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Predict · read before running (8 min)
+
+Keep outcomes hidden. Give 2 minutes of quiet thinking, then 3 minutes of pair explanation and 3 minutes to sample individual predictions.
+
+PROMPT: After touching the crystal and staying still on it, will collected keep changing? Does the image return when we leave?
+
+ANSWER: collected changes from False to True once. The crystal stays hidden until restarting. The collision rule uses 48×48 rectangles, not opaque pixels.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Run · compare with the prediction (8 min)
+
+Teacher opens the unedited reference.py from the teacher resources. Students observe this working reference, then implement the separate TODO skeleton. Follow SETUP.txt. Spend 3 minutes testing, 3 comparing and 2 resetting. Keep teacher_example.py hidden.
+
+PROMPT: After touching the crystal and staying still on it, will collected keep changing? Does the image return when we leave?
+
+ANSWER: collected changes from False to True once. The crystal stays hidden until restarting. The collision rule uses 48×48 rectangles, not opaque pixels.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Investigate · explain the rule (16 min)
+
+Show the exact starter before running. Ask each learner to explain, not just read code. Rotate driver/navigator at the halfway point. Connect the collision condition to collected=True and the draw condition not collected. Use H to see the player hitbox; explain that art and hitboxes can differ.
+
+PROMPT: If collected is already True and the robot touches the old location again, is the guarded block entered? Explain both parts of the condition.
+
+ANSWER: No: not collected is False, so the and condition fails even if touching is True.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Modify · change one behaviour (15 min)
+
+Show the exact starter before running. Ask each learner to explain, not just read code. Rotate driver/navigator at the halfway point. Move the crystal from (560,300) to (560,440) in BOTH collision and drawing code.
+
+PROMPT: Move the crystal from (560,300) to (560,440) in BOTH collision and drawing code.
+
+ANSWER: Use the teacher modification example after learners attempt it. Verify the exact requested rule changed and restart still works.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Make · own a design decision (25 min)
+
+Plan for 5 minutes, build for 12, swap and playtest for 5, then save for 3. Scope down before adding another mechanic. Design a one-item rescue objective with a chosen collectible location. A new player must identify the goal and observe it disappear exactly once.
+
+PROMPT: Design a one-item rescue objective with a chosen collectible location. A new player must identify the goal and observe it disappear exactly once.
+
+ANSWER: Several designs are valid. Require a stated goal, a rule change, and evidence from a test; a reskin alone is insufficient.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Grow · explain, save & reset (10 min)
+
+Use 6 minutes for individual checks, 2 for reflection and 2 for save/cleanup. Log actual evidence later in the school system.
+
+PROMPT: If collected is already True and the robot touches the old location again, is the guarded block entered? Explain both parts of the condition.
+
+ANSWER: No: not collected is False, so the and condition fails even if touching is True.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+ASSESSMENT
+
+[
+  {
+    "objective_id": "O1",
+    "task": "If collected is already True and the robot touches the old location again, is the guarded block entered? Explain both parts of the condition.",
+    "expected": "No: not collected is False, so the and condition fails even if touching is True.",
+    "next_step": "Trace drawing and logic separately; cover one function and predict the other."
+  },
+  {
+    "objective_id": "O2",
+    "task": "Design a one-item rescue objective with a chosen collectible location. A new player must identify the goal and observe it disappear exactly once.",
+    "expected": "A stated decision, prediction, observed result and explained revision; ask both partners independently.",
+    "next_step": "If copied, give a new start value or goal to transfer the rule. If explained independently, use the stretch."
+  }
+]

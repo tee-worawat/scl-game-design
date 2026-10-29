@@ -1,0 +1,11 @@
+1. Collect the battery, wait two seconds, then press R. Predict score, state, position and collected after each step.
+
+My prediction / line evidence:
+
+Actual result:
+
+One rule I changed:
+
+Tester tried / observed difficulty / my revision:
+
+New exit task: A broken reset sets score=0 but leaves collected=True. What happens on the next attempt, and which assignment repairs it?

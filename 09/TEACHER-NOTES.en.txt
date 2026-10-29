@@ -1,0 +1,104 @@
+09 · Feedback that helps the player
+
+Extract the full student package and follow the setup file on a classroom machine.
+
+Run the teacher reference.py, verify the predicted result and test teacher_example.py separately. Student starter.py intentionally contains TODOs.
+
+Keep teacher notes and answer keys out of projection. Display the actual Python window during Run.
+
+Print the trace/playtest worksheet. Prepare an offline paper fallback and assign rotating pair roles.
+
+
+Play · reconnect & prepare (8 min)
+
+Retrieve the countdown and level state. Bridge: a feedback timer expires without blocking movement.
+
+PROMPT: Which part can you explain already?
+
+ANSWER: Retrieve the countdown and level state. Bridge: a feedback timer expires without blocking movement.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Predict · read before running (8 min)
+
+Keep outcomes hidden. Give 2 minutes of quiet thinking, then 3 minutes of pair explanation and 3 minutes to sample individual predictions.
+
+PROMPT: When a crystal disappears, where does the burst appear, how long does it last, and can the player still move?
+
+ANSWER: At the collected target position for 0.3 seconds. Movement continues because no sleep is used. Score text remains as a non-flashing cue.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Run · compare with the prediction (8 min)
+
+Teacher opens the unedited reference.py from the teacher resources. Students observe this working reference, then implement the separate TODO skeleton. Follow SETUP.txt. Spend 3 minutes testing, 3 comparing and 2 resetting. Keep teacher_example.py hidden.
+
+PROMPT: When a crystal disappears, where does the burst appear, how long does it last, and can the player still move?
+
+ANSWER: At the collected target position for 0.3 seconds. Movement continues because no sleep is used. Score text remains as a non-flashing cue.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Investigate · explain the rule (16 min)
+
+Show the exact starter before running. Ask each learner to explain, not just read code. Rotate driver/navigator at the halfway point. Trace flash, flash_x and flash_y separately from game position. Use an A/B playtest: same route, change only feedback duration.
+
+PROMPT: flash=0.1 and dt=0.2: what is drawn next? Does a vanished burst remove the score?
+
+ANSWER: flash clamps to 0, so no burst; score persists independently.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Modify · change one behaviour (15 min)
+
+Show the exact starter before running. Ask each learner to explain, not just read code. Rotate driver/navigator at the halfway point. Increase burst duration from 0.3 to 0.6 seconds. Decide from observation whether this clarifies collection or distracts.
+
+PROMPT: Increase burst duration from 0.3 to 0.6 seconds. Decide from observation whether this clarifies collection or distracts.
+
+ANSWER: Use the teacher modification example after learners attempt it. Verify the exact requested rule changed and restart still works.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Make · own a design decision (25 min)
+
+Plan for 5 minutes, build for 12, swap and playtest for 5, then save for 3. Scope down before adding another mechanic. Design a feedback choice for collection or victory, including a no-flash option. Record one observed player difficulty and one tested repair.
+
+PROMPT: Design a feedback choice for collection or victory, including a no-flash option. Record one observed player difficulty and one tested repair.
+
+ANSWER: Several designs are valid. Require a stated goal, a rule change, and evidence from a test; a reskin alone is insufficient.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+Grow · explain, save & reset (10 min)
+
+Use 6 minutes for individual checks, 2 for reflection and 2 for save/cleanup. Log actual evidence later in the school system.
+
+PROMPT: flash=0.1 and dt=0.2: what is drawn next? Does a vanished burst remove the score?
+
+ANSWER: flash clamps to 0, so no burst; score persists independently.
+
+EVIDENCE: Listen for a causal explanation tied to a variable, condition or line; check each partner independently.
+
+
+ASSESSMENT
+
+[
+  {
+    "objective_id": "O1",
+    "task": "flash=0.1 and dt=0.2: what is drawn next? Does a vanished burst remove the score?",
+    "expected": "flash clamps to 0, so no burst; score persists independently.",
+    "next_step": "Keep a countdown variable and draw condition; never pause the whole loop for feedback."
+  },
+  {
+    "objective_id": "O2",
+    "task": "Design a feedback choice for collection or victory, including a no-flash option. Record one observed player difficulty and one tested repair.",
+    "expected": "A stated decision, prediction, observed result and explained revision; ask both partners independently.",
+    "next_step": "If copied, give a new start value or goal to transfer the rule. If explained independently, use the stretch."
+  }
+]
